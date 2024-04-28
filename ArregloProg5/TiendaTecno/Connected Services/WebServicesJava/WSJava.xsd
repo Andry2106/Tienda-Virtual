@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://wsJava/" targetNamespace="http://wsJava/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="AgregarPregunta" type="tns:AgregarPregunta" />
+  <xs:element name="AgregarPreguntaResponse" type="tns:AgregarPreguntaResponse" />
+  <xs:element name="CalcularMontoTotalCompra" type="tns:CalcularMontoTotalCompra" />
+  <xs:element name="CalcularMontoTotalCompraResponse" type="tns:CalcularMontoTotalCompraResponse" />
+  <xs:element name="Conexion" type="tns:Conexion" />
+  <xs:element name="Conexion2" type="tns:Conexion2" />
+  <xs:element name="Conexion2Response" type="tns:Conexion2Response" />
+  <xs:element name="ConexionResponse" type="tns:ConexionResponse" />
+  <xs:element name="GenerarVenta" type="tns:GenerarVenta" />
+  <xs:element name="GenerarVentaResponse" type="tns:GenerarVentaResponse" />
+  <xs:element name="InsertarDireccion" type="tns:InsertarDireccion" />
+  <xs:element name="InsertarDireccionResponse" type="tns:InsertarDireccionResponse" />
+  <xs:element name="Login" type="tns:Login" />
+  <xs:element name="LoginEspecial" type="tns:LoginEspecial" />
+  <xs:element name="LoginEspecialResponse" type="tns:LoginEspecialResponse" />
+  <xs:element name="LoginResponse" type="tns:LoginResponse" />
+  <xs:element name="VerificarRespuesta" type="tns:VerificarRespuesta" />
+  <xs:element name="VerificarRespuestaResponse" type="tns:VerificarRespuestaResponse" />
+  <xs:element name="actualizarUsuario" type="tns:actualizarUsuario" />
+  <xs:element name="actualizarUsuarioResponse" type="tns:actualizarUsuarioResponse" />
+  <xs:element name="agregarAlCarrito" type="tns:agregarAlCarrito" />
+  <xs:element name="agregarAlCarritoResponse" type="tns:agregarAlCarritoResponse" />
+  <xs:element name="realizarPago" type="tns:realizarPago" />
+  <xs:element name="realizarPagoResponse" type="tns:realizarPagoResponse" />
+  <xs:element name="realizarTransferencia" type="tns:realizarTransferencia" />
+  <xs:element name="realizarTransferenciaResponse" type="tns:realizarTransferenciaResponse" />
+  <xs:complexType name="agregarAlCarrito">
+    <xs:sequence>
+      <xs:element name="idProducto" type="xs:int" />
+      <xs:element name="idUsuario" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="agregarAlCarritoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GenerarVenta">
+    <xs:sequence>
+      <xs:element name="idUsuario" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GenerarVentaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VerificarRespuesta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="correo" type="xs:string" />
+      <xs:element minOccurs="0" name="respuesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VerificarRespuestaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Conexion2">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Conexion2" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Conexion2Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Conexion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Conexion" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ConexionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LoginEspecial">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="correo" type="xs:string" />
+      <xs:element minOccurs="0" name="nuevaClave" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LoginEspecialResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="realizarTransferencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="correoElectronico" type="xs:string" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+      <xs:element name="cantidad" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="realizarTransferenciaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Login">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="correo" type="xs:string" />
+      <xs:element minOccurs="0" name="clave" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LoginResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InsertarDireccion">
+    <xs:sequence>
+      <xs:element name="idUsuario" type="xs:int" />
+      <xs:element minOccurs="0" name="nombreProvincia" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreCanton" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreDistrito" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InsertarDireccionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarUsuario">
+    <xs:sequence>
+      <xs:element name="idUsuario" type="xs:int" />
+      <xs:element minOccurs="0" name="nombres" type="xs:string" />
+      <xs:element minOccurs="0" name="apellidos" type="xs:string" />
+      <xs:element minOccurs="0" name="correo" type="xs:string" />
+      <xs:element minOccurs="0" name="clave" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarUsuarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="realizarPago">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="numeroTarjeta" type="xs:string" />
+      <xs:element minOccurs="0" name="correoElectronico" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaExpiracion" type="xs:string" />
+      <xs:element name="cvv" type="xs:int" />
+      <xs:element name="cantidad" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="realizarPagoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CalcularMontoTotalCompra">
+    <xs:sequence>
+      <xs:element name="idUsuario" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CalcularMontoTotalCompraResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AgregarPregunta">
+    <xs:sequence>
+      <xs:element name="idUsuario" type="xs:int" />
+      <xs:element minOccurs="0" name="pregunta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AgregarPreguntaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

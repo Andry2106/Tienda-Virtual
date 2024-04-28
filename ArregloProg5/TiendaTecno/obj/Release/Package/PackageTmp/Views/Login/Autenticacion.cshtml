@@ -1,0 +1,207 @@
+﻿@{
+    Layout = null;
+    int idUsuario = 0;
+    string token = null;
+
+    if (Session["idUsuario"] != null)
+    {
+        int.TryParse(Session["idUsuario"].ToString(), out idUsuario);
+    }
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Autenticacion</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Autenticación</h2>
+        <form id="tokenForm">
+
+            <input type="hidden" id="idUsuario" name="idUsuario" value="@idUsuario" disabled />
+
+            <input type="hidden" id="tokenInput" name="tokenInput" value="@token" disabled />
+            <label for="tokenConfirm">Digite el token recibido:</label>
+            <input type="text" id="tokenConfirm" name="tokenConfirm" />
+            <button type="button" id="btnConfirmar">Confirmar</button>
+            <div class="small"><a href="@Url.Action("Index","Login")">Volver al login</a></div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        var intentosFallidos = 0;
+
+$(document).ready(function () {
+    enviarCorreoConToken();
+    setTimeout(function () {
+        obtenerTokenIdUsuario();
+    }, 1000); // 1000 milisegundos = 1 segundo
+});
+
+
+$('#btnConfirmar').click(function () {
+    var tokenInput = $('#tokenInput').val();
+    var tokenConfirm = $('#tokenConfirm').val();
+
+    if (tokenInput === tokenConfirm) {
+        eliminarTokens();
+        // Sweet Alert para confirmación exitosa
+        Swal.fire({
+            title: '¡Éxito!',
+            text: 'Token confirmado. Redireccionando...',
+            icon: 'success',
+            timer: 2000, // tiempo en milisegundos
+            timerProgressBar: true,
+            willClose: () => {
+                window.location.href = '@Url.Action("Index", "Tienda")';
+            }
+        });
+     } else {
+         intentosFallidos++;
+         if (intentosFallidos >= 3) {
+             $('#tokenConfirm').prop('disabled', true);
+             $('#btnConfirmar').prop('disabled', true);
+              setTimeout(function () {
+                $('#tokenConfirm').prop('disabled', false);
+                $('#btnConfirmar').prop('disabled', false);
+                intentosFallidos = 0;
+                // Sweet Alert para desbloqueo después de 5 minutos
+                Swal.fire({
+                    title: 'Error',
+                    text: 'Se ha bloqueado el formulario después de 5 minutos de suspensión se habilitara.',
+                    icon: 'error',
+                    confirmButtonText: 'Aceptar'
+                });
+            }, 300000); // 300000 milisegundos = 5 minutos
+        }
+        // Sweet Alert para token inválido
+        Swal.fire({
+            title: 'Error',
+            text: 'El token ingresado no es válido.',
+            icon: 'error',
+            confirmButtonText: 'Aceptar'
+        });
+    }
+});
+
+
+function enviarCorreoConToken() {
+    var idUsuario = $('#idUsuario').val();
+    $.ajax({
+        url: '@Url.Action("EnviarCorreoConToken", "Email")',
+        type: 'POST',
+        data: { idUsuario: idUsuario },
+        success: function (response) {
+            if (!response.success) {
+                // Sweet Alert para mostrar mensaje de error
+                Swal.fire({
+                    title: 'Error',
+                    text: 'Verifique su correo',
+                    icon: 'error',
+                    confirmButtonText: 'Aceptar'
+                });
+                console.log(idUsuario);
+            }
+        },
+        error: function (xhr, status, error) {
+            // Sweet Alert para mostrar mensaje de error
+            Swal.fire({
+                title: 'Info',
+                text: 'Verifique su correo',
+                icon: 'info',
+                confirmButtonText: 'Aceptar'
+            });
+        }
+    });
+}
+
+
+        function obtenerTokenIdUsuario() {
+            var idUsuario = $('#idUsuario').val();
+            $.ajax({
+                url: '@Url.Action("ObtenerTokenPorIdUsuario", "Email")',
+                type: 'POST',
+                data: { idUsuario: idUsuario },
+                success: function (response) {
+                    $('#tokenInput').val(response);
+                },
+                error: function (xhr, status, error) {
+                    alert('Error al obtener el token.');
+                }
+            });
+        }
+    function eliminarTokens(idUsuario) {
+      $.ajax({
+        url: '@Url.Action("EliminarTokensGenerales", "Email")', // Cambia a la acción correspondiente para eliminar tokens generales
+           type: 'POST',
+        success: function (response) {
+                // Maneja la respuesta si es necesario
+         },
+        error: function (xhr, status, error) {
+               alert('Error al eliminar los tokens.');
+          }
+       });
+    }
+
+
+    </script>
+</body>
+</html>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url('https://cuarteldelmetal.com/wp-content/uploads/2023/07/armado-pc-gamers-sp-digital.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    .container {
+        max-width: 400px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        margin-top: 0;
+        text-align: center;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-sizing: border-box;
+    }
+
+    #btnConfirmar {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+        #btnConfirmar:hover {
+            background-color: #0056b3;
+        }
+</style>

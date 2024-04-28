@@ -1,0 +1,300 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebEssentials.AspNetCore.Pwa</name>
+    </assembly>
+    <members>
+        <member name="T:WebEssentials.AspNetCore.Pwa.PwaController">
+            <summary>
+            A controller for manifest.webmanifest, serviceworker.js and offline.html
+            </summary>
+        </member>
+        <member name="M:WebEssentials.AspNetCore.Pwa.PwaController.#ctor(WebEssentials.AspNetCore.Pwa.PwaOptions,WebEssentials.AspNetCore.Pwa.RetrieveCustomServiceworker)">
+            <summary>
+            Creates an instance of the controller.
+            </summary>
+        </member>
+        <member name="M:WebEssentials.AspNetCore.Pwa.PwaController.ServiceWorkerAsync">
+            <summary>
+            Serves a service worker based on the provided settings.
+            </summary>
+        </member>
+        <member name="M:WebEssentials.AspNetCore.Pwa.PwaController.OfflineAsync">
+            <summary>
+            Serves the offline.html file
+            </summary>
+        </member>
+        <member name="M:WebEssentials.AspNetCore.Pwa.PwaController.WebManifest(WebEssentials.AspNetCore.Pwa.WebManifest)">
+            <summary>
+            Serves the manifest.json file
+            </summary>
+        </member>
+        <member name="T:WebEssentials.AspNetCore.Pwa.PwaOptions">
+            <summary>
+            Options for the service worker.
+            </summary>
+        </member>
+        <member name="M:WebEssentials.AspNetCore.Pwa.PwaOptions.#ctor">
+            <summary>
+            Creates a new default instance of the options.
+            </summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.Pwa.PwaOptions.CacheId">
+            <summary>
+            The cache identifier of the service worker (can be any string).
+            Change this property to force the service worker to reload in browsers.
+            </summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.Pwa.PwaOptions.Strategy">
+            <summary>
+            Selects one of the predefined service worker types.
+            </summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.Pwa.PwaOptions.RoutesToPreCache">
+            <summary>
+            A comma separated list of routes to pre-cache when service worker installs in the browser.
+            </summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.Pwa.PwaOptions.BaseRoute">
+            <summary>
+            The base route to the application.
+            </summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.Pwa.PwaOptions.OfflineRoute">
+            <summary>
+            The route to the page to show when offline.
+            </summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.Pwa.PwaOptions.RegisterServiceWorker">
+            <summary>
+            Determines if a script that registers the service worker should be injected
+            into the bottom of the HTML page.
+            </summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.Pwa.PwaOptions.RegisterWebmanifest">
+            <summary>
+            Determines if a meta tag that points to the web manifest should be inserted
+            at the end of the head element.
+            </summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.Pwa.PwaOptions.ServiceWorkerCacheControlMaxAge">
+            <summary>
+            Determines the value of the ServiceWorker CacheControl header Max-Age (in seconds)
+            </summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.Pwa.PwaOptions.EnableCspNonce">
+            <summary>
+            Determines whether a CSP nonce will be added via NWebSec
+            </summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.Pwa.PwaOptions.AllowHttp">
+            <summary>
+            Generate code even on HTTP connection. Necessary for SSL offloading.
+            </summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.Pwa.PwaOptions.CustomServiceWorkerStrategyFileName">
+            <summary>
+            The file name of the Custom ServiceWorker Strategy
+            </summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.Pwa.PwaOptions.RoutesToIgnore">
+            <summary>
+            A comma separated list of routes to ignore when implementing a CustomServiceworker.  
+            </summary>
+        </member>
+        <member name="T:WebEssentials.AspNetCore.Pwa.RetrieveCustomServiceworker">
+            <summary>
+            A utility that can retrieve the contents of a CustomServiceworker strategy file
+            </summary>
+        </member>
+        <member name="M:WebEssentials.AspNetCore.Pwa.RetrieveCustomServiceworker.GetCustomServiceworker(System.String)">
+            <summary>
+            Returns a <seealso cref="T:System.String"/> containing the contents of a Custom Serviceworker javascript file
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WebEssentials.AspNetCore.Pwa.ServiceWorkerStrategy">
+            <summary>
+            The various modes of service workers.
+            </summary>
+        </member>
+        <member name="F:WebEssentials.AspNetCore.Pwa.ServiceWorkerStrategy.CacheFirst">
+            <summary>
+            Serves all resources from cache and falls back to network.
+            </summary>
+        </member>
+        <member name="F:WebEssentials.AspNetCore.Pwa.ServiceWorkerStrategy.CacheFirstSafe">
+            <summary>
+            Caches all resources and serves from the cache resources with ?v=... query string. Checks network first for HTML.
+            </summary>
+        </member>
+        <member name="F:WebEssentials.AspNetCore.Pwa.ServiceWorkerStrategy.CacheFingerprinted">
+            <summary>
+            Caches resources with ?v=... query string only. Unlike <see cref="F:WebEssentials.AspNetCore.Pwa.ServiceWorkerStrategy.CacheFirstSafe"/>, this doesn't cache resources without fingerprints.
+            </summary>
+        </member>
+        <member name="F:WebEssentials.AspNetCore.Pwa.ServiceWorkerStrategy.Minimal">
+            <summary>
+            The minimal strategy does nothing and is good for when you only want a service worker in
+            order for browsers to suggest installing your PWA.
+            </summary>
+        </member>
+        <member name="F:WebEssentials.AspNetCore.Pwa.ServiceWorkerStrategy.NetworkFirst">
+            <summary>
+            Always tries the network first and falls back to cache when offline.
+            </summary>
+        </member>
+        <member name="F:WebEssentials.AspNetCore.Pwa.ServiceWorkerStrategy.CustomStrategy">
+            <summary>
+            Allows a user defined custom strategy to be provided.
+            </summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.Pwa.ServiceWorkerTagHelperComponent.Order">
+            <inheritdoc />
+        </member>
+        <member name="M:WebEssentials.AspNetCore.Pwa.ServiceWorkerTagHelperComponent.Process(Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext,Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput)">
+            <inheritdoc />
+        </member>
+        <member name="T:WebEssentials.AspNetCore.Pwa.Icon">
+            <summary>
+            An icon as defined in the web manifest
+            </summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.Pwa.Icon.Src">
+            <summary>The path to the image file. If src is a relative URL, the base URL will be the URL of the manifest. Example: "/img/icon-192x192.png"</summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.Pwa.Icon.Type">
+            <summary>A hint as to the media type of the image.The purpose of this member is to allow a user agent to quickly ignore images of media types it does not support. Example: "image/png"</summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.Pwa.Icon.Sizes">
+            <summary>A string containing space-separated image dimensions. Example: "192x192"</summary>
+        </member>
+        <member name="T:WebEssentials.AspNetCore.Pwa.RelatedApplication">
+            <summary>
+            A related native application.
+            </summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.Pwa.RelatedApplication.Platform">
+            <summary>The platform on which the application can be found.</summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.Pwa.RelatedApplication.Url">
+            <summary>The URL at which the application can be found.</summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.Pwa.RelatedApplication.Id">
+            <summary>The ID used to represent the application on the specified platform.</summary>
+        </member>
+        <member name="T:WebEssentials.AspNetCore.Pwa.WebManifest">
+            <summary>
+            The Web App Manifest
+            </summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.Pwa.WebManifest.FileName">
+            <summary>The absolute file path to Web App Manifest file.</summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.Pwa.WebManifest.RawJson">
+            <summary>The raw JSON from the manifest file.</summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.Pwa.WebManifest.Name">
+            <summary>A name for use in the Web App Install banner.</summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.Pwa.WebManifest.ShortName">
+            <summary>A short_name for use as the text on the users home screen.</summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.Pwa.WebManifest.Description">
+            <summary>Provides a general description of what the web application does.</summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.Pwa.WebManifest.IarcRatingId">
+            <summary>.</summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.Pwa.WebManifest.Categories">
+            <summary>.</summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.Pwa.WebManifest.Dir">
+            <summary>Specifies the primary text direction for the name, short_name, and description members.
+            Together with the lang member, it can help provide the correct display of right-to-left languages.</summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.Pwa.WebManifest.Lang">
+            <summary>Specifies the primary language for the values in the name and short_name members. This value is a string containing a single language tag.</summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.Pwa.WebManifest.StartUrl">
+            <summary>If you don't provide a start_url, the current page is used, which is unlikely to be what your users want.</summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.Pwa.WebManifest.Icons">
+            <summary>A list of icons.</summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.Pwa.WebManifest.BackgroundColor">
+            <summary>A hex color value.</summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.Pwa.WebManifest.ThemeColor">
+            <summary>A hex color value.</summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.Pwa.WebManifest.Display">
+            <summary>Defines the developer's preferred display mode for the web application.</summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.Pwa.WebManifest.Orientation">
+            <summary></summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.Pwa.WebManifest.PreferRelatedApplications">
+            <summary>pecifies a boolean value that hints for the user agent to indicate to the user that the specified related applications are available, and recommended over the web application.</summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.Pwa.WebManifest.RelatedApplications">
+            <summary>Specifies an array of "application objects" representing native applications that are installable by, or accessible to, the underlying platform.</summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.Pwa.WebManifest.Scope">
+            <summary>Defines the navigation scope of this web application's application context.</summary>
+        </member>
+        <member name="M:WebEssentials.AspNetCore.Pwa.WebManifest.IsValid(System.String@)">
+            <summary>
+            Check if the manifest is valid
+            </summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.Pwa.WebmanifestTagHelperComponent.Order">
+            <inheritdoc />
+        </member>
+        <member name="M:WebEssentials.AspNetCore.Pwa.WebmanifestTagHelperComponent.Process(Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext,Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput)">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.Extensions.DependencyInjection.ServiceCollectionExtensions">
+            <summary>
+            Extension methods for the <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> type.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServiceCollectionExtensions.AddServiceWorker(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds ServiceWorker services to the specified <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServiceCollectionExtensions.AddServiceWorker(Microsoft.Extensions.DependencyInjection.IServiceCollection,WebEssentials.AspNetCore.Pwa.PwaOptions)">
+            <summary>
+            Adds ServiceWorker services to the specified <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServiceCollectionExtensions.AddServiceWorker(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.String,System.String,WebEssentials.AspNetCore.Pwa.ServiceWorkerStrategy,System.Boolean,System.Boolean,System.String,System.String,System.String,System.String)">
+            <summary>
+            Adds ServiceWorker services to the specified <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServiceCollectionExtensions.AddWebManifest(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.String)">
+            <summary>
+            Adds Web App Manifest services to the specified <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+            <param name="services">The service collection.</param>
+            <param name="manifestFileName">The path to the Web App Manifest file relative to the wwwroot folder.</param>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServiceCollectionExtensions.AddProgressiveWebApp(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.String)">
+            <summary>
+            Adds Web App Manifest and Service Worker to the specified <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+            <param name="services">The service collection.</param>
+            <param name="manifestFileName">The path to the Web App Manifest file relative to the wwwroot folder.</param>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServiceCollectionExtensions.AddProgressiveWebApp(Microsoft.Extensions.DependencyInjection.IServiceCollection,WebEssentials.AspNetCore.Pwa.PwaOptions,System.String)">
+            <summary>
+            Adds Web App Manifest and Service Worker to the specified <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+            <param name="services">The service collection.</param>
+            <param name="manifestFileName">The path to the Web App Manifest file relative to the wwwroot folder.</param>
+            <param name="options">Options for the service worker and Web App Manifest</param>
+        </member>
+    </members>
+</doc>

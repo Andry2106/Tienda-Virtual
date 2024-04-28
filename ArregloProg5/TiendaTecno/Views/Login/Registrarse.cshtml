@@ -1,0 +1,262 @@
+﻿@{
+    Layout = null;
+    string token = null;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar</title>
+    <link href="~/Content/CssBot.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body class="bg-primary">
+    <div id="layoutAuthentication">
+        <div id="layoutAuthentication_content">
+            <main>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-7">
+                            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                <div class="card-header"><h3 class="text-center font-weight-light my-4">Crear una cuenta</h3></div>
+                                <div class="card-body">
+                                    <form id="registroForm">
+                                        <div class="row mb-3">
+                                            <div class="col-md-6">
+                                                <div class="form-floating mb-3 mb-md-0">
+                                                    <input class="form-control" id="txtnombre" name="Nombres" placeholder="Nombres" />
+                                                    <label for="txtnombre">Nombres</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-floating">
+                                                    <input class="form-control" id="txtapellidos" name="Apellidos" placeholder="Apellidos" />
+                                                    <label for="txtapellidos">Apellidos</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control" id="txtcorreo" name="Correo" placeholder="Correo" />
+                                            <label for="txtcorreo">Correo</label>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <div class="col-md-6">
+                                                <div class="form-floating mb-3 mb-md-0">
+                                                    <input type="password" class="form-control" id="txtclave" name="Clave" placeholder="Contraseña" />
+                                                    <label for="txtclave">Contraseña</label>
+                                                </div>
+                                                <div class="form-floating mb-4 mb-md-2">
+                                                    <input type="password" class="form-control" id="txtconfirmar" name="Confirmar" placeholder="Confirmar Contraseña" />
+                                                    <label for="txtconfirmar">Confirmar contraseña</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-3">
+                                            <div class="col-md-6">
+                                                <div class="form-floating mb-3 mb-md-0">
+                                                    <input type="text" class="form-control" id="txtToken" name="Token" placeholder="Token" style="display:none;" />
+                                                    <label for="txtToken">Token</label>
+                                                </div>
+                                                <div class="form-floating">
+
+                                                    <input type="text" class="form-control" id="txtAutentificarToken" placeholder="Token" />
+                                                    <label for="txtconfirmar">Confirmar Token</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mt-4 mb-0">
+                                            <div class="d-grid">
+                                                <asp:Label runat="server" Text="">Debera confirmar el token para crear la cuenta, para recibir el token presionar el boton de confirmar</asp:Label>
+                                               
+                                                <button id="btnEnviarCorreo" class="btn btn-primary btn-block" type="button">Enviar Correo</button>
+                                                <button id="btnConfirmar" class="btn btn-primary btn-block" type="button" style="display:none;">Confirmar</button>
+                                                <button id="btnRegistrar" class="btn btn-primary btn-block" type="button" disabled>Crear Cuenta</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="card-footer text-center py-3">
+                                    <div class="small"><a href="@Url.Action("Index","Login")">¿Ya tienes una cuenta? Iniciar Sesión</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    </body>
+</html>
+<script>
+    $(document).ready(function () {
+        var token = '';
+
+$('#btnEnviarCorreo').click(function () {
+    var correo = $('#txtcorreo').val();
+    if (correo === '') {
+        // Sweet Alert para mostrar un mensaje de error si el correo está vacío
+        Swal.fire({
+            title: 'Error',
+            text: 'Por favor, ingrese un correo válido',
+            icon: 'error',
+            confirmButtonText: 'Aceptar'
+        });
+        return;
+    }
+
+    $.ajax({
+        url: '@Url.Action("EnviarCorreo", "Email")',
+        type: 'POST',
+        dataType: 'json',
+          data: { correoUsuario: correo },
+        success: function (response) {
+            if (response.success) {
+                // Sweet Alert para mostrar un mensaje de éxito
+                Swal.fire({
+                    title: 'Éxito',
+                    text: response.message,
+                    icon: 'success',
+                    confirmButtonText: 'Aceptar'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Tu lógica adicional aquí si es necesaria
+                        token = response.token;
+                        $('#txtToken').val(token);
+                        $('#btnEnviarCorreo').hide();
+                        $('#btnConfirmar').show();
+                    }
+                });
+            } else {
+                // Sweet Alert para mostrar un mensaje de error si no fue exitoso
+                Swal.fire({
+                    title: 'Error',
+                    text: response.message,
+                    icon: 'error',
+                    confirmButtonText: 'Aceptar'
+                });
+            }
+        },
+        error: function (xhr, status, error) {
+            console.error('Error al enviar el correo:', error);
+            // Sweet Alert para mostrar un mensaje de error genérico
+            Swal.fire({
+                title: 'Error',
+                text: 'Error al enviar el correo: ' + error,
+                icon: 'error',
+                confirmButtonText: 'Aceptar'
+            });
+        }
+    });
+});
+
+
+        $('#btnConfirmar').click(function () {
+            var tokenIngresado = $('#txtAutentificarToken').val();
+            if (tokenIngresado === token) {
+                $('#btnRegistrar').prop('disabled', false);
+                // Sweet Alert para mostrar un mensaje de éxito
+                Swal.fire({
+                    title: 'Token correcto',
+                    text: 'Ahora puede crear la cuenta.',
+                    icon: 'success',
+                    confirmButtonText: 'Aceptar'
+                });
+            } else {
+                // Sweet Alert para mostrar un mensaje de error
+                Swal.fire({
+                    title: 'Error',
+                    text: 'El token ingresado no es válido. Por favor, inténtelo de nuevo.',
+                    icon: 'error',
+                    confirmButtonText: 'Aceptar'
+                });
+            }
+        });
+
+
+         $('#btnRegistrar').click(function () {
+    var nombres = $('#txtnombre').val();
+    var apellidos = $('#txtapellidos').val();
+    var correo = $('#txtcorreo').val();
+    var clave = $('#txtclave').val();
+    var confirmar = $('#txtconfirmar').val();
+
+    if (clave !== confirmar) {
+        // Sweet Alert para mostrar un mensaje de error si las contraseñas no coinciden
+        Swal.fire({
+            title: 'Error',
+            text: 'Las contraseñas no coinciden',
+            icon: 'error',
+            confirmButtonText: 'Aceptar'
+        });
+        return;
+    }
+
+    var hashedPassword = CryptoJS.SHA256(clave).toString(CryptoJS.enc.Hex);
+
+    $.ajax({
+        url: '@Url.Action("RegistrarUsuario", "Login")',
+        type: 'POST',
+        dataType: 'json',
+        data: {
+            Nombres: nombres,
+            Apellidos: apellidos,
+            Correo: correo,
+            Clave: hashedPassword,
+            Confirmar: confirmar
+        },
+        success: function (response) {
+            if (response.idAutogenerado > 0) {
+                // Sweet Alert para mostrar un mensaje de éxito si el usuario se registró correctamente
+                Swal.fire({
+                    title: 'Éxito',
+                    text: 'Usuario registrado exitosamente',
+                    icon: 'success',
+                    confirmButtonText: 'Aceptar'
+                });
+            } else {
+                // Sweet Alert para mostrar un mensaje de error si hubo un problema al registrar el usuario
+                Swal.fire({
+                    title: 'Error',
+                    text: 'Error al registrar el usuario: ' + response.mensaje,
+                    icon: 'error',
+                    confirmButtonText: 'Aceptar'
+                });
+            }
+        },
+        error: function (xhr, status, error) {
+            console.error('Error al registrar el usuario:', error);
+            // Sweet Alert para mostrar un mensaje de error genérico si hay un error en la solicitud AJAX
+            Swal.fire({
+                title: 'Error',
+                text: 'Error al registrar el usuario: ' + error,
+                icon: 'error',
+                confirmButtonText: 'Aceptar'
+            });
+        }
+    });
+});
+
+    });
+</script>
+
+
+
+
+    <style>
+        body {
+            background-image: url('https://cuarteldelmetal.com/wp-content/uploads/2023/07/armado-pc-gamers-sp-digital.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+        }
+    </style>

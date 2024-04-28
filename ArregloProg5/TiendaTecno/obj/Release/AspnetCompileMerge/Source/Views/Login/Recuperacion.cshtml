@@ -1,0 +1,172 @@
+﻿@{
+    Layout = null;
+
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Recuperacion</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Recuperación</h2>
+        <form id="recuperacionForm">
+            <label for="txtCorreo">Correo electrónico:</label>
+            <input type="text" id="txtCorreo" name="Correo" />
+
+            <label for="txtContraseña">Nueva Contraseña:</label>
+            <input type="text" id="txtContraseña" name="Contraseña" />
+
+            <label for="txtRespuesta">Cuál es el Nombre de la persona más importante en su vida:</label>
+            <input type="text" id="txtRespuesta" name="Respuesta" />
+
+            <button type="button" id="btnConfirmar">Confirmar</button>
+            <div class="small"><a href="@Url.Action("Index","Login")">Volver al login</a></div>
+        </form>
+    </div>
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+
+<script>
+$(document).ready(function () {
+    $('#btnConfirmar').click(function () {
+        var correo = $('#txtCorreo').val();
+        var nuevaContraseña = $('#txtContraseña').val();
+        var respuesta = $('#txtRespuesta').val();
+
+        var hashedPassword = CryptoJS.SHA256(nuevaContraseña).toString(CryptoJS.enc.Hex);
+
+        $.ajax({
+            url: '@Url.Action("VerificarRespuesta", "Login")',
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                correo: correo,
+                respuesta: respuesta
+            },
+            success: function (response) {
+                Swal.fire({
+                    title: response.mensaje,
+                    icon: 'success',
+                    confirmButtonText: 'Aceptar'
+                });
+                if (response.mensaje === "La respuesta proporcionada es correcta") {
+                    $.ajax({
+                        url: '@Url.Action("LoginEspecial", "Login")',
+                        type: 'POST',
+                        dataType: 'json',
+                        data: {
+                            correo: correo,
+                            nuevaClave: hashedPassword
+                        },
+                        success: function (loginResponse) {
+                            if (loginResponse.success) {
+                                Swal.fire({
+                                    title: 'Recuperación exitosa.',
+                                    icon: 'success',
+                                    confirmButtonText: 'Aceptar'
+                                }).then((result) => {
+                                    if (result.isConfirmed) {
+                                        window.location.href = loginResponse.redirectTo;
+                                    }
+                                });
+                            } else {
+                                Swal.fire({
+                                    title: 'Error al iniciar sesión',
+                                    text: 'Error: ' + loginResponse.message,
+                                    icon: 'error',
+                                    confirmButtonText: 'Aceptar'
+                                });
+                            }
+                        },
+                        error: function (xhr, status, error) {
+                            console.error('Error al iniciar sesión:', error);
+                            Swal.fire({
+                                title: 'Error',
+                                text: 'Error al iniciar sesión: ' + error,
+                                icon: 'error',
+                                confirmButtonText: 'Aceptar'
+                            });
+                        }
+                    });
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error('Error al verificar respuesta:', error);
+                Swal.fire({
+                    title: 'Error',
+                    text: 'Error al verificar respuesta: ' + error,
+                    icon: 'error',
+                    confirmButtonText: 'Aceptar'
+                });
+            }
+        });
+    });
+});
+</script>
+
+
+
+
+<style>
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url('https://cuarteldelmetal.com/wp-content/uploads/2023/07/armado-pc-gamers-sp-digital.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    .container {
+        max-width: 400px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        margin-top: 0;
+        text-align: center;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-sizing: border-box;
+    }
+
+    #btnConfirmar {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+        #btnConfirmar:hover {
+            background-color: #0056b3;
+        }
+</style>

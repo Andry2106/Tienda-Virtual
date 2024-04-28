@@ -1,0 +1,201 @@
+﻿@{
+    ViewBag.Title = "Productos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<ol class="breadcrumb mb-4 mt-4">
+    <li class="breadcrumb-item"><a href="index.html">Opciones</a></li>
+    <li class="breadcrumb-item active">Productos</li>
+</ol>
+<div class="card">
+    <div class="card-header">
+        <i class="fas fa-box me-1"></i> Lista de Productos
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-12">
+                <button type="button" class="btn btn-success" onclick="AbrirModal(null)">Agregar Producto</button>
+            </div>
+        </div>
+        <hr />
+        <table id="tablaProductos" class="display cell border" style="width: 100%">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                    <th>Stock</th>
+                    <th>Categoría</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="modal fade" id="FormModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+                <h5 class="modal-title" id="exampleModalLabel">Producto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body g-2">
+                <input id="txtid" type="hidden" value="0" />
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label for="txtnombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="txtnombre">
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label for="txtdescripcion" class="form-label">Descripción</label>
+                        <input type="text" class="form-control" id="txtdescripcion">
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label for="txtprecio" class="form-label">Precio</label>
+                        <input type="text" class="form-control" id="txtprecio">
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label for="txtstock" class="form-label">Stock</label>
+                        <input type="text" class="form-control" id="txtstock">
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label for="txtcategoria" class="form-label">Categoría</label>
+                        <input type="number" class="form-control" id="txtcategoria">
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="txtruta" class="form-label">Ruta de Imagen</label>
+                        <input type="text" class="form-control" id="txtruta">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" onclick="GuardarProducto()">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        var tablaProductos;
+        tablaProductos = $('#tablaProductos').DataTable({
+            responsive: true,
+            ordering: false,
+            "ajax": {
+                url: '@Url.Action("ListarProductos", "Home")',
+                type: "GET",
+                dataType: "json"
+            },
+            columns: [
+                { data: "Nombre" },
+                { data: "Descripcion" },
+                { data: "Precio" },
+                { data: "stock" },
+                { data: "idCategoria" },
+                {
+                    "defaultContent": '<button type="button" class="btn btn-primary btn-sm btn-editar"><i class="fas fa-pen"></i></button>' +
+                        '<button type="button" class="btn btn-danger btn-sm ms-2 btn-Eliminar"><i class="fas fa-trash"></i></button>',
+                    "orderable": false,
+                    "searchable": false,
+                    "width": "90px"
+                }
+            ],
+            "language": {
+                "url": "https://cdn.datatables.net/plug-ins/1.11.3/i18n/es_es.json"
+            }
+        });
+
+        function AbrirModal(datosFila) {
+            $("#txtid").val(0);
+            $("#txtnombre").val("");
+            $("#txtdescripcion").val("");
+            $("#txtprecio").val("");
+            $("#txtstock").val("");
+            $("#txtcategoria").val("");
+            $("#txtruta").val("");
+
+            if (datosFila != null) {
+                $("#txtid").val(datosFila.idProducto);
+                $("#txtnombre").val(datosFila.Nombre);
+                $("#txtdescripcion").val(datosFila.Descripcion);
+                $("#txtprecio").val(datosFila.Precio);
+                $("#txtstock").val(datosFila.stock);
+                $("#txtcategoria").val(parseInt(datosFila.idCategoria));
+                $("#txtruta").val(datosFila.RutaImagen);
+            }
+            $("#FormModal").modal("show");
+        }
+
+        $("#tablaProductos tbody").on("click", ".btn-editar", function () {
+            var filaSeleccionada = $(this).closest("tr");
+            var datosFila = tablaProductos.row(filaSeleccionada).data();
+            console.log(datosFila);
+            AbrirModal(datosFila);
+        });
+
+        function GuardarProducto() {
+            var datosProducto = {
+                idProducto: $('#txtid').val(),
+                Nombre: $('#txtnombre').val(),
+                Descripcion: $('#txtdescripcion').val(),
+                Precio: $('#txtprecio').val(),
+                Stock: $('#txtstock').val(),
+                idCategoria: $('#txtcategoria').val(),
+                RutaImagen: $('#txtruta').val()
+            };
+
+            $.ajax({
+                url: '/Home/GuardarProducto',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(datosProducto),
+                success: function (response) {
+                    if (response.idAutogenerado > 0) {
+                        alert('Producto guardado correctamente.');
+                        $("#FormModal").modal("hide");
+                        tablaProductos.ajax.reload();
+                    } else {
+                        alert( + response.mensaje);
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.error('Error en la llamada AJAX:', error);
+                }
+            });
+        }
+
+        $('#tablaProductos tbody').on('click', '.btn-Eliminar', function () {
+            var data = tablaProductos.row($(this).parents('tr')).data();
+            EliminarProducto(data.idProducto);
+        });
+
+        function EliminarProducto(idProducto) {
+            if (confirm("¿Estás seguro de que deseas eliminar este producto?")) {
+                $.ajax({
+                    url: '/Home/EliminarProducto',
+                    type: 'POST',
+                    data: { id: idProducto },
+                    success: function (response) {
+                        if (response.resultado) {
+                            alert('Producto eliminado correctamente.');
+                            tablaProductos.ajax.reload();
+                        } else {
+                            alert('Error al eliminar el producto: ' + response.mensaje);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.error('Error en la llamada AJAX:', error);
+                    }
+                });
+            }
+        }
+    </script>
+}
+

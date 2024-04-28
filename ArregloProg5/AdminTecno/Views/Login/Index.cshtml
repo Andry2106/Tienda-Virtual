@@ -1,0 +1,100 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link href="~/Content/CssBot.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+<body class="bg-primary">
+    <div id="layoutAuthentication">
+        <div id="layoutAuthentication_content">
+            <main>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-5">
+                            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
+                                <div class="card-body">
+                                    <form id="loginForm">
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control" name="correo" id="correo" type="email" required>
+                                            <label for="inputEmail">Email</label>
+                                        </div>
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control" name="clave" id="clave" type="password" required>
+                                            <label for="inputPassword">Contraseña</label>
+                                        </div>
+                                        <div class="form-floating mb-3">
+                                            <div id="errorContainer" class="alert alert-danger" role="alert" style="display: none;"></div>
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+                                            <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                                            <div class="small"><a href="@Url.Action("Registrarse","Login")">Registrarse</a></div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="card-footer text-center py-3">
+                                    <!-- Footer content here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <div id="layoutAuthentication_footer">
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Copyright &copy; TecnoCr</div>
+                        <div>
+                            <a href="#">Privacy Policy</a>
+                            &middot;
+                            <a href="#">Terms &amp; Conditions</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("loginForm").addEventListener("submit", function(event) {
+                event.preventDefault();
+                var correo = document.getElementById("correo").value;
+                var clave = document.getElementById("clave").value;
+                var hashedPassword = CryptoJS.SHA256(clave).toString(CryptoJS.enc.Hex);
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "@Url.Action("Login", "Login")");
+                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === XMLHttpRequest.DONE) {
+                        if (xhr.status === 200) {
+                            var response = JSON.parse(xhr.responseText);
+                            if (response.success) {
+                                window.location.href = response.redirectTo;
+                            } else {
+                                document.getElementById("errorContainer").innerText = response.message;
+                                document.getElementById("errorContainer").style.display = "block";
+                            }
+                        } else {
+                            console.error("Ocurrió un error al procesar la solicitud.");
+                            alert("Ocurrió un error al procesar la solicitud.");
+                        }
+                    }
+                };
+                var data = JSON.stringify({ correo: correo, clave: hashedPassword });
+                xhr.send(data);
+            });
+        });
+    </script>
+</body>
+</html>

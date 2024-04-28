@@ -1,0 +1,52 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DetalleProducto</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        #imagenProducto {
+            max-width: 200px;
+            max-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="detalleProducto">
+        <div id="detalles"></div>
+        <img id="imagenProducto" src="#" alt="Imagen del Producto">
+    </div>
+    <script>
+        $(document).ready(function () {
+            
+            var urlParams = new URLSearchParams(window.location.search);
+            var idProducto = 1;
+
+            $.ajax({
+                url: '/Tienda/ObtenerDetallesProducto?id=' + idProducto,
+                type: 'GET',
+                dataType: 'json',
+                success: function (response) {
+                    var detallesProducto = '';
+                    detallesProducto += '<p>Nombre: ' + response.Nombre + '</p>';
+                    detallesProducto += '<p>Descripción: ' + response.Descripcion + '</p>';
+                    detallesProducto += '<p>Precio: ' + response.Precio + '</p>';
+                 
+
+                    $('#detalles').html(detallesProducto);
+                    $('#imagenProducto').attr('src', response.RutaImagen); 
+                },
+                error: function (xhr, status, error) {
+                    console.error('Error al obtener detalles del producto:', error);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

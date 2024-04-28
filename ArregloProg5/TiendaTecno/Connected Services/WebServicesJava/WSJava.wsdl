@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://wsJava/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="WSJava" targetNamespace="http://wsJava/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/WSExamen/WSJava?xsd=1" namespace="http://wsJava/" />
+    </xsd:schema>
+  </types>
+  <message name="Conexion2">
+    <part name="parameters" element="tns:Conexion2" />
+  </message>
+  <message name="Conexion2Response">
+    <part name="parameters" element="tns:Conexion2Response" />
+  </message>
+  <message name="Conexion">
+    <part name="parameters" element="tns:Conexion" />
+  </message>
+  <message name="ConexionResponse">
+    <part name="parameters" element="tns:ConexionResponse" />
+  </message>
+  <message name="Login">
+    <part name="parameters" element="tns:Login" />
+  </message>
+  <message name="LoginResponse">
+    <part name="parameters" element="tns:LoginResponse" />
+  </message>
+  <message name="agregarAlCarrito">
+    <part name="parameters" element="tns:agregarAlCarrito" />
+  </message>
+  <message name="agregarAlCarritoResponse">
+    <part name="parameters" element="tns:agregarAlCarritoResponse" />
+  </message>
+  <message name="GenerarVenta">
+    <part name="parameters" element="tns:GenerarVenta" />
+  </message>
+  <message name="GenerarVentaResponse">
+    <part name="parameters" element="tns:GenerarVentaResponse" />
+  </message>
+  <message name="AgregarPregunta">
+    <part name="parameters" element="tns:AgregarPregunta" />
+  </message>
+  <message name="AgregarPreguntaResponse">
+    <part name="parameters" element="tns:AgregarPreguntaResponse" />
+  </message>
+  <message name="realizarPago">
+    <part name="parameters" element="tns:realizarPago" />
+  </message>
+  <message name="realizarPagoResponse">
+    <part name="parameters" element="tns:realizarPagoResponse" />
+  </message>
+  <message name="LoginEspecial">
+    <part name="parameters" element="tns:LoginEspecial" />
+  </message>
+  <message name="LoginEspecialResponse">
+    <part name="parameters" element="tns:LoginEspecialResponse" />
+  </message>
+  <message name="VerificarRespuesta">
+    <part name="parameters" element="tns:VerificarRespuesta" />
+  </message>
+  <message name="VerificarRespuestaResponse">
+    <part name="parameters" element="tns:VerificarRespuestaResponse" />
+  </message>
+  <message name="InsertarDireccion">
+    <part name="parameters" element="tns:InsertarDireccion" />
+  </message>
+  <message name="InsertarDireccionResponse">
+    <part name="parameters" element="tns:InsertarDireccionResponse" />
+  </message>
+  <message name="CalcularMontoTotalCompra">
+    <part name="parameters" element="tns:CalcularMontoTotalCompra" />
+  </message>
+  <message name="CalcularMontoTotalCompraResponse">
+    <part name="parameters" element="tns:CalcularMontoTotalCompraResponse" />
+  </message>
+  <message name="realizarTransferencia">
+    <part name="parameters" element="tns:realizarTransferencia" />
+  </message>
+  <message name="realizarTransferenciaResponse">
+    <part name="parameters" element="tns:realizarTransferenciaResponse" />
+  </message>
+  <message name="actualizarUsuario">
+    <part name="parameters" element="tns:actualizarUsuario" />
+  </message>
+  <message name="actualizarUsuarioResponse">
+    <part name="parameters" element="tns:actualizarUsuarioResponse" />
+  </message>
+  <portType name="WSJava">
+    <operation name="Conexion2">
+      <input wsam:Action="http://wsJava/WSJava/Conexion2Request" message="tns:Conexion2" />
+      <output wsam:Action="http://wsJava/WSJava/Conexion2Response" message="tns:Conexion2Response" />
+    </operation>
+    <operation name="Conexion">
+      <input wsam:Action="http://wsJava/WSJava/ConexionRequest" message="tns:Conexion" />
+      <output wsam:Action="http://wsJava/WSJava/ConexionResponse" message="tns:ConexionResponse" />
+    </operation>
+    <operation name="Login">
+      <input wsam:Action="http://wsJava/WSJava/LoginRequest" message="tns:Login" />
+      <output wsam:Action="http://wsJava/WSJava/LoginResponse" message="tns:LoginResponse" />
+    </operation>
+    <operation name="agregarAlCarrito">
+      <input wsam:Action="http://wsJava/WSJava/agregarAlCarritoRequest" message="tns:agregarAlCarrito" />
+      <output wsam:Action="http://wsJava/WSJava/agregarAlCarritoResponse" message="tns:agregarAlCarritoResponse" />
+    </operation>
+    <operation name="GenerarVenta">
+      <input wsam:Action="http://wsJava/WSJava/GenerarVentaRequest" message="tns:GenerarVenta" />
+      <output wsam:Action="http://wsJava/WSJava/GenerarVentaResponse" message="tns:GenerarVentaResponse" />
+    </operation>
+    <operation name="AgregarPregunta">
+      <input wsam:Action="http://wsJava/WSJava/AgregarPreguntaRequest" message="tns:AgregarPregunta" />
+      <output wsam:Action="http://wsJava/WSJava/AgregarPreguntaResponse" message="tns:AgregarPreguntaResponse" />
+    </operation>
+    <operation name="realizarPago">
+      <input wsam:Action="http://wsJava/WSJava/realizarPagoRequest" message="tns:realizarPago" />
+      <output wsam:Action="http://wsJava/WSJava/realizarPagoResponse" message="tns:realizarPagoResponse" />
+    </operation>
+    <operation name="LoginEspecial">
+      <input wsam:Action="http://wsJava/WSJava/LoginEspecialRequest" message="tns:LoginEspecial" />
+      <output wsam:Action="http://wsJava/WSJava/LoginEspecialResponse" message="tns:LoginEspecialResponse" />
+    </operation>
+    <operation name="VerificarRespuesta">
+      <input wsam:Action="http://wsJava/WSJava/VerificarRespuestaRequest" message="tns:VerificarRespuesta" />
+      <output wsam:Action="http://wsJava/WSJava/VerificarRespuestaResponse" message="tns:VerificarRespuestaResponse" />
+    </operation>
+    <operation name="InsertarDireccion">
+      <input wsam:Action="http://wsJava/WSJava/InsertarDireccionRequest" message="tns:InsertarDireccion" />
+      <output wsam:Action="http://wsJava/WSJava/InsertarDireccionResponse" message="tns:InsertarDireccionResponse" />
+    </operation>
+    <operation name="CalcularMontoTotalCompra">
+      <input wsam:Action="http://wsJava/WSJava/CalcularMontoTotalCompraRequest" message="tns:CalcularMontoTotalCompra" />
+      <output wsam:Action="http://wsJava/WSJava/CalcularMontoTotalCompraResponse" message="tns:CalcularMontoTotalCompraResponse" />
+    </operation>
+    <operation name="realizarTransferencia">
+      <input wsam:Action="http://wsJava/WSJava/realizarTransferenciaRequest" message="tns:realizarTransferencia" />
+      <output wsam:Action="http://wsJava/WSJava/realizarTransferenciaResponse" message="tns:realizarTransferenciaResponse" />
+    </operation>
+    <operation name="actualizarUsuario">
+      <input wsam:Action="http://wsJava/WSJava/actualizarUsuarioRequest" message="tns:actualizarUsuario" />
+      <output wsam:Action="http://wsJava/WSJava/actualizarUsuarioResponse" message="tns:actualizarUsuarioResponse" />
+    </operation>
+  </portType>
+  <binding name="WSJavaPortBinding" type="tns:WSJava">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="Conexion2">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Conexion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Login">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="agregarAlCarrito">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GenerarVenta">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="AgregarPregunta">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="realizarPago">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="LoginEspecial">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="VerificarRespuesta">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="InsertarDireccion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CalcularMontoTotalCompra">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="realizarTransferencia">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="actualizarUsuario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="WSJava">
+    <port name="WSJavaPort" binding="tns:WSJavaPortBinding">
+      <soap:address location="http://localhost:8080/WSExamen/WSJava" />
+    </port>
+  </service>
+</definitions>

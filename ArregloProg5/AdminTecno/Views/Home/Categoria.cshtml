@@ -1,0 +1,170 @@
+﻿@{
+    ViewBag.Title = "Categoria";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<ol class="breadcrumb mb-4 mt-4">
+    <li class="breadcrumb-item"><a href="index.html">Mantemiento</a></li>
+    <li class="breadcrumb-item active">Categorias</li>
+</ol>
+
+<div class="card">
+    <div class="card-header">
+        <i class="fas fa-users me-1"></i> Lista de Categorias
+    </div>
+
+    <div class="card-body">
+        <div class="row">
+            <div class="col-12">
+                <button type="button" class="btn btn-success" onclick="abrirModal(null)">Crear Nuevo</button>
+            </div>
+        </div>
+
+        <hr />
+
+        <table id="tabla" class="display cell-border" style="width: 100%">
+            <thead>
+                <tr>
+                    <th>Descripcion</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="FormModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+                <h5 class="modal-title" id="exampleModalLabel">Categoria</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input id="txtid" type="hidden" value="0" />
+                <div class="row g-1">
+                    <div class="col-sm-6">
+                        <label for="txtdescripcion" class="form-label">Descripcion</label>
+                        <input type="text" class="form-control" id="txtdescripcion" autocomplete="off">
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" onclick="Guardar()">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section scripts{
+    <script>
+        var tabladata;
+        tabladata = $('#tabla').DataTable({
+            responsive: true,
+            ordering: false,
+            "ajax": {
+                url: '@Url.Action("ListarCategorias", "Home")',
+                type: "GET",
+                dataType: "json"
+            },
+            columns: [
+                { data: "Descripcion" },
+                {
+                    "defaultContent": '<button type="button" class="btn btn-primary btn-sm btn-editar"><i class="fas fa-pen"></i></button>' +
+                        '<button type="button" class="btn btn-danger btn-sm ms-2 btn-Eliminar"><i class="fas fa-trash"></i></button>',
+                    "orderable": false,
+                    "searchable": false,
+                    "width": "90px"
+                }
+            ],
+            "language": {
+                "url": "https://cdn.datatables.net/plug-ins/1.11.3/i18n/es_es.json"
+            }
+        });
+
+        function abrirModal(datosFila) {
+            $("#txtid").val(0);
+            $("#txtdescripcion").val("");
+
+            if (datosFila != null) {
+                $("#txtid").val(datosFila.idCategoria);
+                $("#txtdescripcion").val(datosFila.Descripcion);
+            }
+            $("#FormModal").modal("show");
+        }
+        $("#tabla tbody").on("click", ".btn-editar", function () {
+            var filaSeleccionada = $(this).closest("tr");
+            var datosFila = tabladata.row(filaSeleccionada).data();
+            console.log(datosFila);
+            abrirModal(datosFila);
+        });
+        function Guardar() {
+            var datosCategoria = {
+                idCategoria: $('#txtid').val(),
+                Descripcion: $('#txtdescripcion').val(),
+            };
+
+            $.ajax({
+                url: '/Home/GuardarCategoria',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(datosCategoria),
+                success: function (response) {
+                    if (response.resultado) {
+                        alert('Exito en la operacion: ');
+                        console.log(datosCategoria);
+                        window.location.reload();
+                        $("#txtid").val(0);
+                        $("#txtdescripcion").val("");
+
+                    } else {
+                        window.location.reload();
+                        $("#txtid").val(0);
+                        $("#txtdescripcion").val("");
+
+                    }
+                },
+                error: function (xhr, status, error) {
+                    alert('Error en la llamada AJAX: ' + error);
+                }
+            });
+        }
+
+        $('#tabla tbody').on('click', '.btn-Eliminar', function () {
+            var data = tabladata.row($(this).parents('tr')).data();
+            EliminarCategoria(data.idCategoria);
+        });
+
+
+function EliminarCategoria(idCategoria) {
+    if (confirm("¿Estás seguro de que deseas eliminar esta categoría?")) {
+        $.ajax({
+            url: '@Url.Action("EliminarCategoria", "Home")',
+            type: 'POST',
+            data: { idCategoria: idCategoria },
+            success: function (response) {
+                if (response.resultado) {
+                    alert('Categoría eliminada correctamente.');
+                  
+                    tabladata.ajax.reload();
+                } else {
+                    alert('Error al eliminar la categoría: ' + response.mensaje);
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error('Error en la llamada AJAX:', error);
+            }
+        });
+    }
+}
+
+    </script>
+}

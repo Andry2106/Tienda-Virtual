@@ -1,0 +1,846 @@
+﻿@{
+    ViewBag.Title = "CarritoCompra";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int idUsuario = 0;
+
+    if (Session["idUsuario"] != null)
+    {
+        int.TryParse(Session["idUsuario"].ToString(), out idUsuario);
+    }
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <ol class="breadcrumb mb-4 mt-4">
+    </ol>
+
+    <div class="card">
+        <div class="card-header">
+            <i class="fas fa-shopping-cart me-1"></i> Carrito de Compras
+        </div>
+
+        <div class="card-body">
+            <div id="productos-carrito">
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="payment-box">
+
+        <div class="form-group mt-4">
+            <label for="provinciaSelect">Provincia:</label>
+            <select class="form-control" id="provinciaSelect" onchange="cargarCantones()">
+                <option value="">Seleccionar provincia</option>
+
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="cantonSelect">Cantón:</label>
+            <select class="form-control" id="cantonSelect" onchange="cargarDistritos()">
+                <option value="">Seleccionar cantón</option>
+
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="distritoSelect">Distrito:</label>
+            <select class="form-control" id="distritoSelect">
+                <option value="">Seleccionar distrito</option>
+            </select>
+        </div>
+
+        <button type="button" class="btn btn-primary" id="pagarBCR">Pagar por BCR</button>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <input type="radio" name="paymentType" value="tarjeta" id="tarjetaRadio" checked>
+            <label for="tarjetaRadio">Pago Tarjeta</label>
+            <input type="radio" name="paymentType" value="transferencia" id="transferenciaRadio">
+            <label for="transferenciaRadio">Transferencia</label>
+            <br><br>
+            <div id="tarjetaFields">
+                <label for="numeroTarjetaModal">Número de Tarjeta:</label>
+                <input type="text" id="numeroTarjetaModal" name="numeroTarjetaModal" placeholder="Ingrese el número de su tarjeta">
+                <br>
+                <label for="nombreTitularModal">Correo Electrónico:</label>
+                <input type="text" id="correoElectronicoModal" name="correoElectronicoModal" placeholder="Ingrese el nombre del titular">
+                <br>
+                <label for="fechaExpiracionModal">Fecha de Expiración:</label>
+                <input type="text" id="fechaExpiracionModal" name="fechaExpiracionModal" placeholder="MM/AA">
+                <br>
+                <label for="codigoSeguridadModal">Código de Seguridad:</label>
+                <input type="text" id="codigoSeguridadModal" name="codigoSeguridadModal" placeholder="Ingrese el código de seguridad">
+                <br>
+
+                <input type="hidden" id="montoPago" name="montoPago" placeholder="Ingrese el monto del pago">
+                <br>
+                <!-- Botón de comprar dentro del modal -->
+                <button type="button" class="btn btn-primary" id="botonCompraModal" onclick="realizarCompra()">Comprar</button>
+
+
+
+            </div>
+            <div id="transferenciaFields" style="display:none;">
+                <label for="correoElectronico">Correo Electrónico:</label>
+                <input type="text" id="correoElectronico" name="correoElectronico" placeholder="Ingrese su correo electrónico">
+                <br>
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" placeholder="Ingrese su contraseña">
+                <br>
+
+                <input type="hidden" id="montoTransferencia" name="montoTransferencia" placeholder="Ingrese el monto de la transferencia">
+                <br>
+                <button type="button" class="btn btn-primary" id="botonTransferencia" onclick="realizarTransferencia()">Transferir</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Agrega aquí tus scripts -->
+    <script>
+        // Función para validar que todos los campos de pago con tarjeta estén completos antes de realizar el pago
+        function validarPagoTarjeta() {
+            var numeroTarjeta = document.getElementById('numeroTarjetaModal').value;
+            var nombreTitular = document.getElementById('nombreTitularModal').value;
+            var fechaExpiracion = document.getElementById('fechaExpiracionModal').value;
+            var codigoSeguridad = document.getElementById('codigoSeguridadModal').value;
+
+            if (!numeroTarjeta || !nombreTitular || !fechaExpiracion || !codigoSeguridad) {
+                alert('Por favor complete todos los campos para realizar el pago con tarjeta.');
+                return false;
+            }
+
+            return true;
+        }
+
+        // Función para realizar el pago con tarjeta
+        function realizarPagoTarjeta() {
+            if (!validarPagoTarjeta()) {
+                return;
+            }
+
+            // Lógica para realizar el pago con tarjeta...
+            alert('Pago con tarjeta realizado exitosamente.');
+            // Aquí podrías agregar la lógica adicional para procesar el pago con tarjeta
+        }
+
+        // Función para realizar la transferencia
+        //function realizarTransferencia() {
+        //    var correoElectronico = document.getElementById('correoElectronico').value;
+        //    var password = document.getElementById('password').value;
+
+        //    if (!correoElectronico || !password) {
+        //        alert('Por favor complete todos los campos para realizar la transferencia.');
+        //        return;
+        //    }
+
+        //    // Lógica para realizar la transferencia...
+        //    alert('Transferencia realizada exitosamente.');
+        //    // Aquí podrías agregar la lógica adicional para procesar la transferencia
+        //}
+
+        // Obtener el botón para pagar por BCR
+        var pagarBCRBtn = document.getElementById("pagarBCR");
+
+        // Cuando el usuario haga clic en el botón para pagar por BCR, abrir el modal
+        pagarBCRBtn.onclick = function () {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "block";
+        }
+
+        // Obtener el botón de cierre del modal
+        var closeBtn = document.getElementsByClassName("close")[0];
+
+        // Obtener el modal
+        var modal = document.getElementById("myModal");
+
+        // Cuando el usuario haga clic en el botón de cierre, cerrar el modal
+        closeBtn.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // Cuando el usuario haga clic en cualquier parte fuera del modal, cerrar el modal
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Obtener los campos y botones relevantes
+        var tarjetaFields = document.getElementById('tarjetaFields');
+        var transferenciaFields = document.getElementById('transferenciaFields');
+        var tarjetaRadio = document.getElementById('tarjetaRadio');
+        var transferenciaRadio = document.getElementById('transferenciaRadio');
+
+        // Función para mostrar los campos según el tipo de pago seleccionado
+        function mostrarCamposSegunPago() {
+            if (tarjetaRadio.checked) {
+                tarjetaFields.style.display = 'block';
+                transferenciaFields.style.display = 'none';
+            } else if (transferenciaRadio.checked) {
+                tarjetaFields.style.display = 'none';
+                transferenciaFields.style.display = 'block';
+            }
+        }
+
+        // Llamar a la función para mostrar los campos al cargar la página
+        mostrarCamposSegunPago();
+
+        // Agregar evento de cambio a los botones de radio para mostrar los campos adecuados
+        tarjetaRadio.addEventListener('change', mostrarCamposSegunPago);
+        transferenciaRadio.addEventListener('change', mostrarCamposSegunPago);
+        //pruebas
+        function obtenerMontoTotalCompra(idUsuario) {
+            $.ajax({
+                url: '/Tienda/CalcularMontoTotalCompra', // Ruta al controlador y acción que calculará el monto total de compra
+                type: 'POST', // Utilizamos el método POST para enviar el idUsuario al servidor
+                data: { idUsuario: idUsuario }, // Enviamos el idUsuario al servidor como datos del formulario
+                success: function (response) {
+                    // Manejar la respuesta del servidor
+                    console.log('Monto total de la compra:', response);
+
+                    // Insertar el monto total en los campos de texto de montoPago y montoTransferencia
+                    $('#montoPago').val(response);
+                    $('#montoTransferencia').val(response);
+                },
+                error: function (xhr, status, error) {
+                    // Manejar cualquier error que ocurra durante la solicitud Ajax
+                    console.error('Error al obtener el monto total de compra:', error);
+                }
+            });
+        }
+        //pago tarjeta
+
+
+function realizarCompra() {
+    // Obtener los valores de los campos de texto
+    var numeroTarjeta = $('#numeroTarjetaModal').val();
+    var correoElectronico = $('#correoElectronicoModal').val();
+    var fechaExpiracion = $('#fechaExpiracionModal').val();
+    var codigoSeguridad = $('#codigoSeguridadModal').val();
+    var montoPago = $('#montoPago').val(); // Este es un campo oculto donde se insertará el monto de pago
+
+    // Crear un objeto con los datos a enviar
+    var data = {
+        numeroTarjeta: numeroTarjeta,
+        correoElectronico: correoElectronico,
+        fechaExpiracion: fechaExpiracion,
+        cvv: codigoSeguridad,
+        cantidad: parseFloat(montoPago)
+    };
+
+    // Llamar al método realizarPago del controlador ASP.NET MVC
+$.ajax({
+    type: "POST",
+    url: "/Tienda/RealizarPago", // Ajusta la URL según la ubicación de tu controlador y el enrutamiento
+    data: data,
+    // No es necesario especificar contentType y dataType para enviar datos de formulario estándar
+    success: function (response) {
+        // Manejar la respuesta del servidor
+        Swal.fire({
+            title: 'Mensaje',
+            text: response, // Mostrar el mensaje directamente
+            icon: 'info',
+            confirmButtonText: 'Aceptar'
+        });
+        // Verificar si la respuesta indica éxito
+        if (response === "Pago realizado exitosamente.") {
+            generarHistorial(@idUsuario);// Esto puede variar dependiendo de cómo esté estructurada la respuesta
+        } else {
+            Swal.fire({
+                title: 'Error',
+                text: 'Error al realizar el pago. Por favor, inténtelo de nuevo más tarde.',
+                icon: 'error',
+                confirmButtonText: 'Aceptar'
+            });
+        }
+    },
+    error: function (xhr, status, error) {
+        console.error("Error al realizar el pago:", error);
+        Swal.fire({
+            title: 'Error',
+            text: 'Error al realizar el pago. Por favor, inténtelo de nuevo más tarde.',
+            icon: 'error',
+            confirmButtonText: 'Aceptar'
+        });
+    }
+});
+
+}
+
+function realizarTransferencia() {
+    // Obtener los valores de los campos
+    var correoElectronico = $('#correoElectronico').val();
+    var password = $('#password').val();
+    var montoTransferencia = $('#montoTransferencia').val();
+
+    // Crear un objeto con los datos a enviar
+    var data = {
+        correoElectronico: correoElectronico,
+        password: password,
+        cantidad: parseFloat(montoTransferencia)
+    };
+
+    // Llamar a la acción de transferencia con una nueva URL
+$.ajax({
+    type: "POST",
+    url: "/Tienda/ProcesarTransferencia", // Nueva URL de la acción
+    data: data,
+    success: function (response) {
+        // Manejar la respuesta del servidor con Sweet Alert
+        Swal.fire({
+            title: 'Mensaje',
+            text: response,
+            icon: 'info',
+            confirmButtonText: 'Aceptar'
+        }).then((result) => {
+            // Verificar si la respuesta indica éxito
+            if (response === "Transferencia realizada exitosamente.") {
+                generarHistorial(@idUsuario);// Esto puede variar dependiendo de cómo esté estructurada la respuesta
+            }
+        });
+    },
+    error: function (xhr, status, error) {
+        console.error("Error al procesar la transferencia:", error);
+        // Mostrar mensaje de error con Sweet Alert
+        Swal.fire({
+            title: 'Error',
+            text: 'Error al procesar la transferencia. Por favor, inténtelo de nuevo más tarde.',
+            icon: 'error',
+            confirmButtonText: 'Aceptar'
+        });
+    }
+});
+
+}
+
+
+
+        function generarHistorial(idUsuario) {
+            $.ajax({
+                url: '/Tienda/GenerarVenta',
+                type: 'POST',
+                data: { idUsuario: idUsuario },
+                success: function (response) {
+                    if (response.success) {
+                        obtenerProductosEnCarrito(idUsuario);
+                    } else {
+                        // Mostrar mensaje de error con Sweet Alert
+                        Swal.fire({
+                            title: 'Error',
+                            text: 'Error al generar la venta.',
+                            icon: 'error',
+                            confirmButtonText: 'Aceptar'
+                        });
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.error('Error al generar la venta:', error);
+                    // Mostrar mensaje de error con Sweet Alert
+                    Swal.fire({
+                        title: 'Error',
+                        text: 'Error al generar la venta. Por favor, inténtelo de nuevo más tarde.',
+                        icon: 'error',
+                        confirmButtonText: 'Aceptar'
+                    });
+                }
+            });
+        }
+
+// Luego puedes llamar a esta función en tu código, pasando los parámetros necesarios
+generarVenta(@idUsuario, nombreProvincia, nombreCanton, nombreDistrito);
+
+
+    </script>
+
+
+
+
+</body>
+</html>
+
+
+<script>
+    
+    var pagarBCRBtn = document.getElementById("pagarBCR");
+
+    
+    pagarBCRBtn.onclick = function () {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "block";
+    }
+
+
+    var closeBtn = document.getElementsByClassName("close")[0];
+
+
+    var modal = document.getElementById("myModal");
+
+    closeBtn.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+
+    var tarjetaFields = document.getElementById('tarjetaFields');
+    var transferenciaFields = document.getElementById('transferenciaFields');
+    var tarjetaRadio = document.getElementById('tarjetaRadio');
+    var transferenciaRadio = document.getElementById('transferenciaRadio');
+
+    function mostrarCamposSegunPago() {
+        if (tarjetaRadio.checked) {
+            tarjetaFields.style.display = 'block';
+            transferenciaFields.style.display = 'none';
+        } else if (transferenciaRadio.checked) {
+            tarjetaFields.style.display = 'none';
+            transferenciaFields.style.display = 'block';
+        }
+    }
+
+    mostrarCamposSegunPago();
+
+    tarjetaRadio.addEventListener('change', mostrarCamposSegunPago);
+    transferenciaRadio.addEventListener('change', mostrarCamposSegunPago);
+</script>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+<script>
+    function validarCampos() {
+        var numeroTarjeta = $('#numeroTarjeta').val();
+        var nombreTitular = $('#nombreTitular').val();
+        var fechaExpiracion = $('#fechaExpiracion').val();
+        var codigoSeguridad = $('#codigoSeguridad').val();
+        var provinciaSeleccionada = $('#provinciaSelect').val();
+        var cantonSeleccionado = $('#cantonSelect').val();
+        var distritoSeleccionado = $('#distritoSelect').val();
+
+        if (numeroTarjeta && nombreTitular && fechaExpiracion && codigoSeguridad && provinciaSeleccionada !== "Seleccionar provincia" && cantonSeleccionado !== "Seleccionar cantón" && distritoSeleccionado !== "Seleccionar distrito") {
+            realizarPago();
+            insertarDireccion();
+        } else {
+            alert('Por favor, complete todos los campos y seleccione una provincia, cantón y distrito antes de pagar.');
+        }
+    }
+
+
+
+
+function realizarPago() {
+    var numeroTarjeta = $('#numeroTarjeta').val();
+    var nombreTitular = $('#nombreTitular').val();
+    var fechaExpiracion = $('#fechaExpiracion').val();
+    var codigoSeguridad = $('#codigoSeguridad').val();
+    var nombreProvincia = $('#provinciaSelect').find('option:selected').text();
+    var nombreCanton = $('#cantonSelect').find('option:selected').text();
+    var nombreDistrito = $('#distritoSelect').find('option:selected').text();
+
+
+    if (numeroTarjeta && nombreTitular && fechaExpiracion && codigoSeguridad) {
+        $.ajax({
+            url: '/Tienda/GenerarVenta',
+            type: 'POST',
+            data: { idUsuario: @idUsuario },
+            success: function (response) {
+                if (response.success) {
+                    obtenerProductosEnCarrito(@idUsuario);
+                    console.log(nombreProvincia);
+                    console.log(nombreCanton);
+                    console.log(nombreDistrito);
+
+                    insertarDireccion(@idUsuario, nombreProvincia, nombreCanton, nombreDistrito);
+                    alert('La venta se ha generado correctamente.');
+                } else {
+                    alert('Error al generar la venta.');
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error('Error al realizar el pago:', error);
+            }
+        });
+    } else {
+        alert('Por favor, complete todos los campos antes de pagar.');
+    }
+}
+
+    function insertarDireccion(idUsuario, nombreProvincia, nombreCanton, nombreDistrito) {
+        var nombreProvincia = $('#provinciaSelect').find('option:selected').text();
+        var nombreCanton = $('#cantonSelect').find('option:selected').text();
+        var nombreDistrito = $('#distritoSelect').find('option:selected').text();
+
+    $.ajax({
+        url: '/Tienda/InsertarDireccion',
+        type: 'POST',
+        data: {
+            idUsuario: idUsuario,
+            nombreProvincia: nombreProvincia,
+            nombreCanton: nombreCanton,
+            nombreDistrito: nombreDistrito
+        },
+        success: function (response) {
+            if (response.success) {
+                console.log('Dirección insertada correctamente.');
+            } else {
+                console.error('Error al insertar la dirección.');
+            }
+        },
+        error: function (xhr, status, error) {
+            console.error('Error al insertar la dirección:', error);
+        }
+    });
+}
+
+
+
+
+    function obtenerProductosEnCarrito(idUsuario) {
+        $.ajax({
+            url: '/Tienda/ProductosEnCarrito',
+            type: 'GET',
+            dataType: 'json',
+            data: { idUsuario: idUsuario },
+            success: function (response) {
+                console.log('Productos del carrito:', response);
+                $('#productos-carrito').empty();
+
+                $.each(response.productos, function (index, producto) { // Corrección aquí
+                    var productHtml = '<div class="d-flex justify-content-between align-items-center mt-3 p-2 items rounded">';
+                    productHtml += '<div class="d-flex flex-row">';
+                    productHtml += '<img class="rounded" src="' + producto.RutaImagen + '" width="40">';
+                    productHtml += '<div class="ml-2"><span class="font-weight-bold d-block">' + producto.Nombre + '</span>';
+                    productHtml += '<span class="d-block">' + "Cantidad:" + producto.cantidad + '</span>';
+                    productHtml += '<span class="d-block ml-5 font-weight-bold">' + "Precio:" + producto.Precio + '</span>';
+                    productHtml += '</div></div>';
+                    productHtml += '<i class="fa fa-trash-o ml-3 text-black-50"></i></div>';
+
+                    $('#productos-carrito').append(productHtml);
+                });
+            },
+            error: function (xhr, status, error) {
+                console.error('Error al obtener productos del carrito:', error);
+            }
+        });
+    }
+
+
+$(document).ready(function () {
+    var idUsuario = parseInt('@idUsuario');
+    console.log(idUsuario);
+    obtenerMontoTotalCompra(idUsuario);
+    obtenerProductosEnCarrito(idUsuario);
+    $('#pagar-btn').click(function () {
+
+        validarCampos();
+    });
+});
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        cargarProvincias();
+    });
+
+    function cargarProvincias() {
+        $.ajax({
+            url: '/Tienda/ObtenerProvincias',
+            type: 'GET',
+            dataType: 'json',
+            success: function (provincias) {
+                console.log('Provincias:', provincias);
+
+                $('#provinciaSelect').empty().append($('<option>', {
+                    value: '',
+                    text: 'Seleccionar provincia'
+                }));
+
+
+                var provinciasMapping = {
+                    'San José': 1,
+                    'Alajuela': 2,
+                    'Cartago': 3,
+                    'Heredia': 4,
+                    'Guanacaste': 5,
+                    'Puntarenas': 6,
+                    'Limón': 7
+                };
+
+                $.each(provincias, function (index, provincia) {
+                    $('#provinciaSelect').append($('<option>', {
+                        value: provinciasMapping[provincia.Nombre],
+                        'data-id': provincia.idProvincia,
+                        text: provincia.Nombre
+                    }));
+                });
+
+                $('#provinciaSelect').change(function () {
+                    var idProvinciaSeleccionada = $(this).val();
+                    cargarCantonesPorProvincia(idProvinciaSeleccionada);
+                    cargarDistritos(idProvinciaSeleccionada);
+                });
+            },
+            error: function (xhr, status, error) {
+                console.error('Error al obtener provincias:', error);
+            }
+        });
+    }
+
+
+    function cargarCantonesPorProvincia(idProvincia) {
+        $.ajax({
+            url: '/Tienda/ObtenerCantonesPorProvincia',
+            type: 'GET',
+            dataType: 'json',
+            data: { idProvincia: idProvincia },
+            success: function (cantones) {
+                console.log('Cantones:', cantones);
+
+                $('#cantonSelect').empty().append($('<option>', {
+                    value: '',
+                    text: 'Seleccionar cantón'
+                }));
+
+                $.each(cantones, function (index, canton) {
+                    $('#cantonSelect').append($('<option>', {
+                        value: canton.idCanton,
+                        text: canton.Nombre
+                    }));
+                });
+            },
+            error: function (xhr, status, error) {
+                console.error('Error al obtener cantones:', error);
+            }
+        });
+    }
+
+    function cargarDistritos(idProvincia) {
+        $.ajax({
+            url: '/Tienda/ObtenerDistritos',
+            type: 'GET',
+            dataType: 'json',
+            data: { idProvincia: idProvincia },
+            success: function (distritos) {
+                console.log('Distritos:', distritos);
+
+                $('#distritoSelect').empty().append($('<option>', {
+                    value: '',
+                    text: 'Seleccionar distrito'
+                }));
+
+                $.each(distritos, function (index, distrito) {
+                    $('#distritoSelect').append($('<option>', {
+                        value: distrito.idDistrito,
+                        text: distrito.Nombre
+                    }));
+                });
+            },
+            error: function (xhr, status, error) {
+                console.error('Error al obtener distritos1:', error);
+            }
+        });
+    }
+
+</script>
+
+
+
+
+
+
+
+
+
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .breadcrumb {
+        background-color: #f8f9fa;
+        margin-bottom: 15px;
+        box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.035);
+    }
+
+    .card {
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+        margin: 20px auto;
+        padding: 20px;
+        max-width: 1000px;
+        border-radius: 5px;
+        background-color: #fff;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .card-header {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    #productos-carrito {
+        flex: 1;
+        margin-right: 20px;
+    }
+
+    .payment-box {
+        flex: 1;
+        margin-top: 20px;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+        .payment-box h4 {
+            text-align: center;
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .payment-box label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .payment-box input[type="text"],
+        .payment-box select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+
+        .payment-box .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+            .payment-box .btn:hover {
+                background-color: #0056b3;
+            }
+</style>
+<style>
+    /* Estilos para el modal */
+    .modal {
+        display: none; /* Ocultar el modal por defecto */
+        position: fixed; /* Permite que el modal flote sobre el contenido de la página */
+        z-index: 1; /* Coloca el modal por encima del resto del contenido */
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto; /* Habilitar el desplazamiento si el contenido del modal es demasiado largo */
+        background-color: rgba(0,0,0,0.4); /* Fondo oscuro semitransparente */
+    }
+
+    /* Contenido del modal */
+    .modal-content {
+        background-color: #fefefe;
+        margin: 10% auto; /* Centrar vertical y horizontalmente */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 600px; /* Anchura máxima del modal */
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    /* Botón de cierre del modal (la 'X' en la esquina superior derecha) */
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+    /* Estilos para los botones de opción */
+    input[type="radio"] {
+        margin-right: 10px;
+    }
+
+    /* Estilos para el botón de pagar */
+    .btn-primary {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+    /* Estilos para el botón de pagar por BCR */
+    .pagarBCR {
+        background-color: #28a745;
+        color: #fff;
+        border: none;
+        padding: 10px 0px; /* Reducción del padding para disminuir el ancho */
+        cursor: pointer;
+        border-radius: 5px;
+        margin: 20px auto; /* Centrar horizontalmente con margen automático y margen inferior */
+        width: 1550px; /* Establecer un ancho fijo */
+    }
+
+        .pagarBCR:hover {
+            background-color: #218838;
+        }
+
+
+    /* Estilos para los campos de texto y de contraseña */
+    input[type="text"],
+    input[type="password"],
+    textarea {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+</style>
+
+
+

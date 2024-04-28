@@ -1,0 +1,460 @@
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\obj\Debug\TiendaTecno.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\obj\Debug\TiendaTecno.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\TiendaTecno.dll.config
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\TiendaTecno.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\TiendaTecno.pdb
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\csc.exe
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\csc.exe.config
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\csc.rsp
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\csi.exe
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\csi.exe.config
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\csi.rsp
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\System.AppContext.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\System.Console.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\System.IO.Compression.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\System.Net.Http.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\System.Net.Sockets.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\System.ValueTuple.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\vbc.exe
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\vbc.exe.config
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\vbc.rsp
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\VBCSCompiler.exe
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Antlr3.Runtime.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Entidades.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Newtonsoft.Json.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\System.Web.Helpers.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\System.Web.Mvc.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\System.Web.Optimization.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\System.Web.Razor.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\System.Web.WebPages.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\System.Web.WebPages.Razor.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\WebGrease.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Entidades.pdb
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\System.Web.Helpers.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\System.Web.Mvc.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\System.Web.Optimization.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\System.Web.Razor.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\System.Web.WebPages.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\System.Web.WebPages.Razor.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Newtonsoft.Json.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Antlr3.Runtime.pdb
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\es\System.Web.Mvc.resources.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\es\System.Web.Optimization.resources.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\es\System.Web.Razor.resources.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\es\System.Web.WebPages.resources.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\obj\Debug\TiendaTecno.csproj.CopyComplete
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\obj\Debug\TiendaTecno.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\obj\Debug\TiendaTecno.pdb
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Antiforgery.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Authentication.Abstractions.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Authentication.Core.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Authorization.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Authorization.Policy.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Cors.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.DataProtection.Abstractions.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.DataProtection.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Diagnostics.Abstractions.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Hosting.Abstractions.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Html.Abstractions.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Http.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Http.Extensions.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Localization.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.Abstractions.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.ApiExplorer.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.Core.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.Cors.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.DataAnnotations.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.Formatters.Json.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.Localization.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.Razor.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.RazorPages.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.TagHelpers.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.ViewFeatures.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Razor.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Razor.Language.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Razor.Runtime.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Routing.Abstractions.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Routing.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.WebUtilities.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.CodeAnalysis.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.CodeAnalysis.Razor.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.FileProviders.Composite.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.Localization.Abstractions.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.Localization.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.ObjectPool.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.Options.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.Primitives.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.WebEncoders.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.Net.Http.Headers.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.Win32.Registry.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Newtonsoft.Json.Bson.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\System.Buffers.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\System.Collections.Immutable.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\System.ComponentModel.Annotations.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\System.Reflection.Metadata.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\System.Security.AccessControl.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\System.Security.Cryptography.Xml.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\System.Security.Principal.Windows.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\System.Text.Encoding.CodePages.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\System.Text.Encodings.Web.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\WebEssentials.AspNetCore.Pwa.dll
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Antiforgery.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Authentication.Abstractions.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Authentication.Core.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Authorization.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Authorization.Policy.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Cors.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Cryptography.Internal.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.DataProtection.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.DataProtection.Abstractions.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Diagnostics.Abstractions.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Hosting.Abstractions.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Html.Abstractions.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Http.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Http.Abstractions.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Http.Extensions.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Http.Features.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.JsonPatch.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Localization.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.Abstractions.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.ApiExplorer.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.Core.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.Cors.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.DataAnnotations.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.Formatters.Json.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.Localization.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.Razor.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.Razor.Extensions.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.RazorPages.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.TagHelpers.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.ViewFeatures.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Razor.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Razor.Language.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Razor.Runtime.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Routing.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Routing.Abstractions.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.WebUtilities.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.CodeAnalysis.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.CodeAnalysis.CSharp.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.CodeAnalysis.Razor.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.Caching.Abstractions.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.Caching.Memory.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.DependencyInjection.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.FileProviders.Abstractions.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.FileProviders.Composite.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.FileSystemGlobbing.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.Hosting.Abstractions.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.Localization.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.Localization.Abstractions.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.ObjectPool.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.Options.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.Primitives.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.WebEncoders.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Microsoft.Net.Http.Headers.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\Newtonsoft.Json.Bson.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\System.Buffers.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\System.Collections.Immutable.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\System.Reflection.Metadata.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\System.Text.Encodings.Web.xml
+C:\Users\Usuario\Desktop\ArregloProg5\TiendaTecno\bin\WebEssentials.AspNetCore.Pwa.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\TiendaTecno.dll.config
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\TiendaTecno.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\TiendaTecno.pdb
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\csc.exe
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\csc.exe.config
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\csc.rsp
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\csi.exe
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\csi.exe.config
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\csi.rsp
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\System.AppContext.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\System.Console.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\System.IO.Compression.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\System.Net.Http.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\System.Net.Sockets.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\System.ValueTuple.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\vbc.exe
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\vbc.exe.config
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\vbc.rsp
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\VBCSCompiler.exe
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Antlr3.Runtime.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Entidades.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Antiforgery.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Authentication.Abstractions.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Authentication.Core.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Authorization.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Authorization.Policy.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Cors.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.DataProtection.Abstractions.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.DataProtection.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Diagnostics.Abstractions.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Hosting.Abstractions.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Html.Abstractions.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Http.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Http.Extensions.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Localization.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.Abstractions.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.ApiExplorer.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.Core.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.Cors.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.DataAnnotations.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.Formatters.Json.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.Localization.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.Razor.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.RazorPages.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.TagHelpers.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.ViewFeatures.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Razor.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Razor.Language.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Razor.Runtime.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Routing.Abstractions.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Routing.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.WebUtilities.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.CodeAnalysis.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.CodeAnalysis.Razor.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.FileProviders.Composite.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.Localization.Abstractions.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.Localization.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.ObjectPool.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.Options.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.Primitives.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.WebEncoders.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.Net.Http.Headers.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.Win32.Registry.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Newtonsoft.Json.Bson.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Newtonsoft.Json.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\System.Buffers.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\System.Collections.Immutable.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\System.ComponentModel.Annotations.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\System.Reflection.Metadata.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\System.Security.AccessControl.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\System.Security.Cryptography.Xml.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\System.Security.Principal.Windows.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\System.Text.Encoding.CodePages.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\System.Text.Encodings.Web.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\System.Web.Helpers.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\System.Web.Mvc.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\System.Web.Optimization.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\System.Web.Razor.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\System.Web.WebPages.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\System.Web.WebPages.Razor.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\WebEssentials.AspNetCore.Pwa.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\WebGrease.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Entidades.pdb
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Antiforgery.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Authentication.Abstractions.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Authentication.Core.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Authorization.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Authorization.Policy.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Cors.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Cryptography.Internal.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.DataProtection.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.DataProtection.Abstractions.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Diagnostics.Abstractions.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Hosting.Abstractions.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Html.Abstractions.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Http.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Http.Abstractions.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Http.Extensions.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Http.Features.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.JsonPatch.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Localization.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.Abstractions.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.ApiExplorer.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.Core.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.Cors.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.DataAnnotations.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.Formatters.Json.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.Localization.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.Razor.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.Razor.Extensions.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.RazorPages.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.TagHelpers.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Mvc.ViewFeatures.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Razor.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Razor.Language.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Razor.Runtime.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Routing.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.Routing.Abstractions.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.AspNetCore.WebUtilities.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.CodeAnalysis.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.CodeAnalysis.CSharp.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.CodeAnalysis.Razor.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.Caching.Abstractions.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.Caching.Memory.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.DependencyInjection.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.FileProviders.Abstractions.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.FileProviders.Composite.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.FileSystemGlobbing.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.Hosting.Abstractions.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.Localization.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.Localization.Abstractions.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.ObjectPool.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.Options.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.Primitives.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.Extensions.WebEncoders.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.Net.Http.Headers.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Newtonsoft.Json.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Newtonsoft.Json.Bson.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\System.Buffers.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\System.Collections.Immutable.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\System.Reflection.Metadata.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\System.Text.Encodings.Web.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\System.Web.Helpers.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\System.Web.Mvc.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\System.Web.Optimization.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\System.Web.Razor.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\System.Web.WebPages.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\System.Web.WebPages.Razor.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\WebEssentials.AspNetCore.Pwa.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Antlr3.Runtime.pdb
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\es\System.Web.Mvc.resources.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\es\System.Web.Optimization.resources.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\es\System.Web.Razor.resources.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\es\System.Web.WebPages.resources.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\obj\Debug\TiendaTecno.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\obj\Debug\TiendaTecno.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\obj\Debug\TiendaTecno.csproj.CopyComplete
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\obj\Debug\TiendaTecno.dll
+C:\Users\Usuario\Desktop\EdicionesAnterioresProgra5\ArregloProg5 (7)\ArregloProg5\TiendaTecno\obj\Debug\TiendaTecno.pdb

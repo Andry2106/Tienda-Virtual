@@ -1,0 +1,251 @@
+﻿@{
+    ViewBag.Title = "MantenimientoUsuario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int idUsuario = 0;
+
+    if (Session["idUsuario"] != null)
+    {
+        int.TryParse(Session["idUsuario"].ToString(), out idUsuario);
+    }
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="~/Content/CssBot.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <h2>Mantenimiento de Usuario</h2>
+
+    <div class="container">
+        <div class="user-details">
+            <div class="form-group">
+                <label for="Nombre">Nombre:</label>
+                <input type="text" id="Nombre" name="Nombre" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="Apellidos">Apellidos:</label>
+                <input type="text" id="Apellidos" name="Apellidos" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="Correo">Correo:</label>
+                <input type="text" id="Correo" name="Correo" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="Clave">Clave:</label>
+                <input type="password" id="Clave" name="Clave" class="form-control" />
+                <input type="hidden" id="ClaveCambiada" value="false" />
+            </div>
+            <div class="form-group">
+                <label for="Pregunta">Cual es el Nombre de la  persona mas importante en su vida:</label>
+                <input type="text" id="Pregunta" name="Pregunta" class="form-control" />
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button type="submit" id="btnActualizar" class="btn btn-primary">Actualizar</button>
+            <button type="button" id="btnPreguntas" class="btn btn-secondary">Insertar Respuesta</button>
+        </div>
+    </div>
+
+
+</body>
+</html>
+<script>
+     $(document).ready(function () {
+
+        var idUsuario = parseInt('@idUsuario');
+
+          $.ajax({
+            url: '/Tienda/ObtenerUsuario',
+            type: 'GET',
+            dataType: 'json',
+            data: { idUsuario: idUsuario },
+            success: function (response) {
+                $('#Nombre').val(response.data.Nombres);
+                $('#Apellidos').val(response.data.Apellidos);
+                $('#Correo').val(response.data.Correo);
+                $('#Clave').val(response.data.Clave);
+            },
+            error: function (xhr, status, error) {
+                console.error('Error al obtener datos del usuario:', error);
+            }
+        });
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        var idUsuario = parseInt('@idUsuario');
+
+        $('#btnActualizar').click(function () {
+            var nombres = $('#Nombre').val();
+            var apellidos = $('#Apellidos').val();
+            var correo = $('#Correo').val();
+            var clave = $('#Clave').val();
+            var claveCambiada = $('#ClaveCambiada').val() === 'true';
+
+            if (claveCambiada) {
+                clave = CryptoJS.SHA256(clave).toString(CryptoJS.enc.Hex);
+            }
+
+            $.ajax({
+                url: '/Tienda/ActualizarUsuario',
+                type: 'POST',
+                dataType: 'json',
+                data: {
+                    idUsuario: idUsuario,
+                    nombres: nombres,
+                    apellidos: apellidos,
+                    correo: correo,
+                    clave: clave
+                },
+                success: function (response) {
+                    if (response.success) {
+                        // Mostrar mensaje de éxito con Sweet Alert
+                        Swal.fire({
+                            title: 'Éxito',
+                            text: 'Usuario actualizado correctamente',
+                            icon: 'success',
+                            confirmButtonText: 'Aceptar'
+                        }).then((result) => {
+                            // Recargar la página después de cerrar el Sweet Alert
+                            location.reload();
+                        });
+                    } else {
+                        console.error('Error al actualizar usuario:', response.message);
+                        // Mostrar mensaje de error con Sweet Alert
+                        Swal.fire({
+                            title: 'Error',
+                            text: 'Error al actualizar usuario: ' + response.message,
+                            icon: 'error',
+                            confirmButtonText: 'Aceptar'
+                        });
+                    }
+                },
+                error: function () {
+                    // Mostrar mensaje de error con Sweet Alert
+                    Swal.fire({
+                        title: 'Error',
+                        text: 'Usuario no ha sido actualizado',
+                        icon: 'error',
+                        confirmButtonText: 'Aceptar'
+                    });
+                }
+            });
+        });
+
+        $('#Clave').on('input', function () {
+            $('#ClaveCambiada').val('true');
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $('#btnPreguntas').click(function () {
+            var pregunta = $('#Pregunta').val();
+
+            if (pregunta.trim() === '') {
+                // Mostrar mensaje de error con Sweet Alert
+                Swal.fire({
+                    title: 'Error',
+                    text: 'Por favor, ingrese una pregunta.',
+                    icon: 'error',
+                    confirmButtonText: 'Aceptar'
+                });
+                return;
+            }
+
+            $.ajax({
+                url: '@Url.Action("AgregarPregunta", "Tienda")',
+                type: 'POST',
+                dataType: 'json',
+                data: {
+                    idUsuario: @idUsuario,
+                    pregunta: pregunta
+                },
+                success: function (response) {
+                    if (response.success) {
+                        // Mostrar mensaje de éxito con Sweet Alert
+                        Swal.fire({
+                            title: 'Éxito',
+                            text: response.message,
+                            icon: 'success',
+                            confirmButtonText: 'Aceptar'
+                        });
+                    } else {
+                        // Mostrar mensaje de error con Sweet Alert
+                        Swal.fire({
+                            title: 'Error',
+                            text: 'Error: ' + response.message,
+                            icon: 'error',
+                            confirmButtonText: 'Aceptar'
+                        });
+                    }
+                },
+                error: function (xhr, status, error) {
+                    // Mostrar mensaje de error con Sweet Alert
+                    Swal.fire({
+                        title: 'Error',
+                        text: 'Ya Tiene una Respuesta a la pregunta, no se pueden digitar varias respuestas.',
+                        icon: 'error',
+                        confirmButtonText: 'Aceptar'
+                    });
+                }
+            });
+        });
+    });
+</script>
+
+
+
+<style>
+    body {
+        background-image: url(https://cdn.pixabay.com/photo/2015/05/26/23/52/technology-785742_1280.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    .user-details {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        width: 60%;
+        margin: 0 auto;
+    }
+
+        .user-details .form-group {
+            margin-bottom: 15px;
+        }
+
+    .buttons {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+        .buttons .btn {
+            margin-right: 10px;
+        }
+
+    h2 {
+        color: #fff;
+        font-size: 24px;
+        text-align: center;
+    }
+
+    footer {
+        background-color: #505555;
+        color: black;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+</style>

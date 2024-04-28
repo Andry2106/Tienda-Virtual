@@ -1,0 +1,468 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int idUsuario = 0;
+
+    if (Session["idUsuario"] != null)
+    {
+        int.TryParse(Session["idUsuario"].ToString(), out idUsuario);
+    }
+}
+
+<head>
+    <link href="~/Content/CssBot.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+
+<header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">Bienvenido a TecnoCR</h1>
+            <p class="lead fw-normal text-white-50 mb-0">Encuentra los mejores productos</p>
+        </div>
+    </div>
+</header>
+
+<section>
+    <div class="container-fluid px-5 my-5">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="row mb-3">
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-header bg-dark text-white">
+                                Buscador
+                            </div>
+                            <div id="contenedor_categoria" class="card-body">
+                                <div class="row mb-3">
+                                    <div class="col-sm-12">
+                                        <input type="text" id="filtro" placeholder="Filtrar..." class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        Cambio Actual
+                                    </div>
+                                    <div class="card-body CompraVenta">
+                                        <label for="Compra">$: @ViewBag.ValorCompra</label><br />
+                                        <label for="Venta">$: @ViewBag.ValorVenta</label>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-9">
+                <div id="contenedor_producto" class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="modal fade" id="modalDetallesProducto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Detalles del Producto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="detallesProductoBody">
+
+            </div>
+            <div class="modal-footer">
+                <img id="imagenProductoModal" src="#" alt="Imagen del Producto" style="max-width: 100%;" />
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts {
+    <script>
+        function cargarProductos() {
+            $.ajax({
+                url: '@Url.Action("ListarProductos", "Tienda")',
+                type: 'GET',
+                dataType: 'json',
+                success: function (response) {
+                    var productos = response.data;
+                    var contenedorProductos = $('#contenedor_producto');
+                    contenedorProductos.empty();
+                    $.each(productos, function (index, producto) {
+                        var productoHTML = `
+                            <div class="col mb-5">
+                                <div class="card h-100">
+                                    <input type="hidden" class="producto-id" value="${producto.idProducto}" />
+                                    <img class="card-img-top" src="${producto.RutaImagen}" alt="${producto.Nombre}" />
+                                    <div class="card-body p-4">
+                                        <div class="text-center">
+                                            <h5 class="fw-bolder">${producto.Nombre}</h5>
+                                            ₡${producto.Precio.toFixed(2)}
+                                        </div>
+                                    </div>
+                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                        <div class="text-center">
+                                            <button class="btn btn-success mt-auto agregarcarrito" data-idproducto="${producto.idProducto}">Agregar al carrito</button>
+                                            <button class="btn btn-outline-dark mt-auto verDetalles">Ver Detalles</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>`;
+                        contenedorProductos.append(productoHTML);
+                    });
+                },
+                error: function (xhr, status, error) {
+                    console.error('Error al cargar los productos:', error);
+                }
+            });
+        }
+
+        function cargarDetallesProducto(idProducto) {
+            $.ajax({
+                url: '/Tienda/ObtenerDetallesProducto?id=' + idProducto,
+                type: 'GET',
+                dataType: 'json',
+                success: function (response) {
+                    var detallesProducto = '';
+                    detallesProducto += '<p>Nombre: ' + response.Nombre + '</p>';
+                    detallesProducto += '<p>Descripción: ' + response.Descripcion + '</p>';
+                    detallesProducto += '<p>Precio: ' + response.Precio + '</p>';
+                    $('#detallesProductoBody').html(detallesProducto);
+                    $('#imagenProductoModal').attr('src', response.RutaImagen);
+                    $('#modalDetallesProducto').modal('show');
+                },
+                error: function (xhr, status, error) {
+                    console.error('Error al cargar los detalles del producto:', error);
+                }
+            });
+           }
+
+function agregarAlCarrito(idProducto) {
+    $.ajax({
+        url: '@Url.Action("AgregarAlCarrito", "Tienda")',
+        type: 'POST',
+        data: {
+            idProducto: idProducto,
+            idUsuario: '@idUsuario'
+        },
+        dataType: 'json',
+        success: function (response) {
+            if (response.success) {
+                // Sweet Alert para mostrar un mensaje de éxito
+                Swal.fire({
+                    title: 'Éxito',
+                    text: response.message,
+                    icon: 'success',
+                    confirmButtonText: 'Aceptar'
+                });
+            } else {
+                // Sweet Alert para mostrar un mensaje de error
+                Swal.fire({
+                    title: 'Éxito',
+                    text: 'Producto incrementado exitosamente en el carrito.',
+                    icon: 'success',
+                    confirmButtonText: 'Aceptar'
+                });
+            }
+        },
+        error: function (xhr, status, error) {
+            // Sweet Alert para mostrar un mensaje de error si hay un error en la solicitud AJAX
+            Swal.fire({
+                title: 'Error',
+                text: 'No puede agregar productos al carrito si no tiene cuenta.',
+                icon: 'error',
+                confirmButtonText: 'Aceptar'
+            });
+        }
+    });
+}
+
+
+        function filtrarProductos(filtro) {
+            $.ajax({
+                url: '@Url.Action("FiltrarProductos", "Tienda")',
+                type: 'POST',
+                data: { filtro: filtro },
+                dataType: 'json',
+                success: function(response) {
+                    var productos = response.data;
+                    var contenedorProductos = $('#contenedor_producto');
+                    contenedorProductos.empty();
+                    $.each(productos, function(index, producto) {
+                        var productoHTML = `
+                            <div class="col mb-5">
+                                <div class="card h-100">
+                                    <input type="hidden" class="producto-id" value="${producto.idProducto}" />
+                                    <img class="card-img-top" src="${producto.RutaImagen}" alt="${producto.Nombre}" />
+                                    <div class="card-body p-4">
+                                        <div class="text-center">
+                                            <h5 class="fw-bolder">${producto.Nombre}</h5>
+                                            ₡${producto.Precio.toFixed(2)}
+                                        </div>
+                                    </div>
+                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                        <div class="text-center">
+                                            <button class="btn btn-success mt-auto agregarcarrito" data-idproducto="${producto.idProducto}">Agregar al carrito</button>
+                                            <button class="btn btn-outline-dark mt-auto verDetalles">Ver Detalles</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>`;
+                        contenedorProductos.append(productoHTML);
+                    });
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error al filtrar los productos:', error);
+                }
+            });
+        }
+
+        $(document).ready(function() {
+            cargarProductos();
+            $('#filtro').on('input', function() {
+                var filtro = $(this).val();
+                filtrarProductos(filtro);
+            });
+            $('#contenedor_producto').on('click', '.verDetalles', function() {
+                var idProducto = $(this).closest('.card').find('.producto-id').val();
+                cargarDetallesProducto(idProducto);
+            });
+            $('#contenedor_producto').on('click', '.agregarcarrito', function() {
+                var idProducto = $(this).data('idproducto');
+                agregarAlCarrito(idProducto);
+            });
+        });
+    </script>
+    <script>
+    $(document).ready(function () {
+        var idUsuario = @idUsuario; // Obtener el ID de usuario de Razor
+
+        $.ajax({
+            url: '/Tienda/ObtenerEstadoUsuario',
+            type: 'GET',
+            data: { idUsuario: idUsuario },
+            dataType: 'json',
+            success: function (response) {
+                console.log('Estado del usuario:', response);
+                // Verificar si la respuesta indica que el usuario es nuevo
+                if (response === 'Nuevo') {
+                    // Abrir el modal aquí
+                    $('#myModal').modal('show'); // Suponiendo que el modal tiene el id 'myModal'
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error('Error al obtener el estado del usuario:', error);
+            }
+        });
+    });
+    </script>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Bienvenido a Tecno</h5>
+
+                </div>
+                <div class="modal-body">
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="card">
+                                    <img src="https://tiusr9pl.cuc-carrera-ti.ac.cr/Gerald/5.png" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <p class="card-text">Tenemos multiples productos con 2 botones, verde para agregar al carrito y blanco para desplegar informacion al detalle.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card">
+                                    <img src="https://tiusr9pl.cuc-carrera-ti.ac.cr/Gerald/2.png" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <p class="card-text">Incluimos 2 tipos de metodo de Pago para cambiar el metodo de pago debera presionar el area encerrado en el cuadro y así podra con el que más gusta.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card">
+                                    <img src="https://tiusr9pl.cuc-carrera-ti.ac.cr/Gerald/3.png" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <p class="card-text">Tendra 2 botones uno para actualizar la información personal el cual es actualizar y el otro para agregar la pregunta de recuperación la contraseña se muestra de esa manera por motivos de seguridad.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card">
+                                    <img src="https://tiusr9pl.cuc-carrera-ti.ac.cr/Gerald/4.png" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <p class="card-text">En la esquina superior derecha tendremos todas las opciones ofrecidas, cualquiera que presione lo va a redirigir a la opción que desea.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Controles del carousel -->
+                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Anterior</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Siguiente</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="btnCerrarModal" onclick="cerrarModal()">Cerrar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('#btnSiguiente').click(function () {
+                $('.carousel').carousel('next'); // Avanzar al siguiente slide del carousel
+            });
+
+            // Al cerrar el modal, resetear el carousel para que comience desde el primer slide
+            $('#myModal').on('hidden.bs.modal', function () {
+                $('.carousel').carousel(0); // Ir al primer slide del carousel
+            });
+
+
+    </script>
+    <script>
+    function cerrarModal() {
+        $('#myModal').modal('hide');
+
+        // Obtener el idUsuario de la sesión
+        var idUsuario = @(idUsuario);
+
+        // Llamar al controlador para eliminar el usuario
+        $.ajax({
+            url: '/Tienda/EliminarUsuario',
+            type: 'GET',
+            data: { idUsuario: idUsuario },
+            success: function (response) {
+                console.log(response);
+            },
+            error: function (xhr, status, error) {
+                console.log("Error al llamar al controlador para eliminar el usuario:", error);
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        $('#btnSiguiente').click(function () {
+            $('.carousel').carousel('next');
+        });
+
+        $('#myModal').on('hidden.bs.modal', function () {
+            $('.carousel').carousel(0);
+        });
+    });
+    </script>
+
+
+
+
+}
+
+
+
+
+<style>
+    .card-img-top {
+        max-width: 100%;
+        height: auto;
+        max-height: 200px;
+    }
+
+    .card:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    footer {
+        background-color: #505555;
+        color: black;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .CompraVenta label {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        color: #333; /* Color del texto */
+        margin-bottom: 10px; /* Espacio entre los labels */
+        display: block; /* Para que ocupen toda la línea */
+    }
+
+        .CompraVenta label::before {
+            content: attr(for) ": "; /* Agrega un colon después de "Compra" y "Venta" */
+            font-weight: bold; /* Hace que "Compra" y "Venta" estén en negrita */
+        }
+    /* Estilo para la tarjeta */
+    .card {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        overflow: hidden;
+    }
+
+    .card-img-top {
+        width: 100%;
+        height: auto;
+    }
+
+    .card-body {
+        padding: 20px;
+    }
+
+    .card-text {
+        color: #333;
+    }
+
+    /* Estilo para los botones de control del carousel */
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: auto;
+        background: none;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 25px;
+        height: 25px;
+    }
+
+    /* Estilo para el botón de cerrar modal */
+    #btnCerrarModal {
+        background-color: #dc3545;
+        color: #fff;
+        border: none;
+    }
+
+        #btnCerrarModal:hover {
+            background-color: #c82333;
+        }
+
+    .modal-dialog {
+        max-width: 500px; /* Ajusta el ancho máximo según tus necesidades */
+        margin: 0 auto; /* Centra horizontalmente */
+        margin-top: 10%; /* Centra verticalmente */
+    }
+</style>

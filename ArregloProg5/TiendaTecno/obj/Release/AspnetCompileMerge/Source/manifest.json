@@ -1,0 +1,20 @@
+{
+  "name": "TecnoCr",
+  "short_name": "TecnoCr",
+  "description": "Bienvenid@s a TecnoCr",
+  "background_color": "#2B2B2B",
+  "theme_color": "#F0DB4F",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": "./Tienda/Index",
+  "scope": "./",
+  "lang": "es-MX",
+  "icons": [
+
+    {
+      "src": "./Imágenes/computadora.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
